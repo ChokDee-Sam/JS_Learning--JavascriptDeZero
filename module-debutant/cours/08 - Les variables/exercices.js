@@ -12,49 +12,36 @@
 // les erreurs JavaScript que vous allez devoir corriger dans ces exercices !
 // Ne supprimez pas la ligne suivante
 try {
+  // -- Début des exercices, vous pouvez modifier le fichier à partir d'ici
+  // Chassez le bogue 0
+  // Décommentez le code suivant pour faire l'exercice
+  let nomParc = "Le Royaume Magique";
+  console.log("Bienvenue au parc d'attractions " + nomParc);
 
+  // Chassez le bogue 1
+  // Décommentez le code suivant pour faire l'exercice
+  let clientsHier = 359;
+  let clientsAujourdhui = 374;
+  let totalClients = clientsHier + clientsAujourdhui;
+  console.log(totalClients);
 
-  
+  // Chassez le bogue 2
+  // Décommentez le code suivant pour faire l'exercice
+  let nombreDeCases = 64;
+  let cases = 2;
+  let superficie = nombreDeCases * cases;
+  console.log("Superficie du plateau : " + superficie + "m2");
 
+  // Chassez le bogue 3
+  // Décommentez le code suivant pour faire l'exercice
+  let heures = 13;
+  let minutes = 37;
+  let separateur = 'h';
+  let horaire = heures + separateur + minutes;
+  console.log("Bienvenue, il est " + horaire);
 
-
-  
-// -- Début des exercices, vous pouvez modifier le fichier à partir d'ici
-// Chassez le bogue 0
-// Décommentez le code suivant pour faire l'exercice
-// let nomParc = "Le Royaume Magique";
-// console.log("Bienvenue au parc d'attractions " + nomparc);
-
-// Chassez le bogue 1
-// Décommentez le code suivant pour faire l'exercice
-// let clientsHier = "359";
-// let clientsAujourdhui = 374;
-// let totalClients = clientsHier + clientsAujourdhui;
-// console.log(totalclients);
-
-// Chassez le bogue 2
-// Décommentez le code suivant pour faire l'exercice
-// let nombreDeCases = 64;
-// let case = 2;
-// let superficie = nombreDeCases * case;
-// console.log("Superficie du plateau : " + superficie + "m2");
-
-// Chassez le bogue 3
-// Décommentez le code suivant pour faire l'exercice
-// let h = 13;
-// let m = 37;
-// let separateur = h;
-// let horaire = H + separateur + M;
-// console.log("Bienvenue, il est " + horaire);
-
-
-
-
-
-
-
-// -- Fin des exercices, ne touchez pas au code suivant
-// Ne supprimez pas les instructions suivantes
+  // -- Fin des exercices, ne touchez pas au code suivant
+  // Ne supprimez pas les instructions suivantes
 } catch (erreur) {
   console.log(`<code>${erreur}</code>
 <p class="attention">L'interpréteur JavaScript a détécté une erreur dans votre code... Zut alors !
