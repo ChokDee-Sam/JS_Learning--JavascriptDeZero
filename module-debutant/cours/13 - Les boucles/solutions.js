@@ -151,7 +151,9 @@ for (let longueurLigne = largeurTriangle; longueurLigne > 0; longueurLigne = lon
  * À nouveau ce sont des erreurs dans les for(let ...) qu'il faut corriger.
  */
 let ligne = "";
+
 for (let longueurLigne = 1; longueurLigne <= largeurTriangle; longueurLigne = longueurLigne + 2) {
+
   // On construit la ligne à afficher
   for (let position = 0; position < longueurLigne; position = position + 1) {
     ligne = ligne + "*";
@@ -159,7 +161,10 @@ for (let longueurLigne = 1; longueurLigne <= largeurTriangle; longueurLigne = lo
   console.log(ligne);
   ligne = "";
 }
+
+
 for (let longueurLigne = largeurTriangle - 2; longueurLigne > 0; longueurLigne = longueurLigne - 2) {
+  
   // On construit la ligne à afficher
   for (let position = 0; position < longueurLigne; position = position + 1) {
     ligne = ligne + "*";
