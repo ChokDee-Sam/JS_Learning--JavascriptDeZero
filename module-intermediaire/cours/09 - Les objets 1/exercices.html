@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Les objets (partie 1) - Exercices</title>
+  <link rel="stylesheet" type="text/css" href="../commun/style.css" />
+  <link rel="icon" type="image/png" href="../../images/favicon-64px.png" />
+</head>
+
+<body>
+  <h1>Les objets (partie 1)</h1>
+  <p>
+    Pour répondre à ces exercices, tapez votre code dans le fichier <code>exercices.js</code>.<br />
+  </p>
+  <p>
+    Pensez à bien lire l'intégralité de <a
+      href="https://github.com/javascriptdezero/module-intermediaire/tree/master/cours#exercices"
+      target="_blank">la documentation pour faire les exercices</a> avant de commencer.
+  </p>
+  <p>
+    Dernier point, lorsque vous trouvez la solution d'un exercice par vous-même, allez tout de même voir la solution que
+    je propose :
+    vous apprendrez peut-être une autre façon de faire plus intéressante !
+  </p>
+
+  <h2>En cas de problèmes techniques</h2>
+  <p>Il se peut que vous rencontriez certains problèmes techniques pour valider les exercices.<br>
+    Lisez leur solution au moins une fois avant de commencer les exercices.</p>
+  <ul>
+    <li>
+      <p>Si certains exercices précédemment validés en vert redeviennent gris et "En attente de code à tester" : c'est
+        qu'il y
+        a une erreur de syntaxe dans votre code. Solution : ouvrez la console développeur pour trouver l'erreur.</p>
+      <details>
+        <summary>Cliquez ici pour savoir comment ouvrir la console développeur de Chrome</summary>
+        <p><strong>Sur Windows ou Linux</strong> : depuis Chrome, tapez <code>Ctrl + Shift + J</code> ou allez dans le
+          menu (les 3
+          petits points verticaux en haut à droite de la fenêtre de Chrome) puis allez dans Plus d'outils > Outils de
+          développement.</p>
+        <p><strong>Sur MacOS</strong> : depuis Chrome, tapez <code>⌘ + ⌥ + J</code> (Commande + Option + J) ou bien
+          allez dans le
+          menu Afficher > Options pour les développeurs > Console JavaScript.</p>
+        <p>Le message d'erreur apparaît en rouge et est en anglais, il faudra le traduire. L'erreur vient du fichier
+          noté sur la droite au numéro de ligne indiqué. Ouvrez ce fichier dans VSCode, rendez-vous à la ligne indiquée
+          et corrigez l'erreur.<br><br>
+          <img src="../../images/console-developpeur.jpg" alt="Onglet console de la console développeur"
+            style="width: 100%">
+        </p>
+      </details>
+    </li>
+    <li>
+      <p>Si la page web ne répond plus (les clics n'ont aucun effet) ou si l'icône dans l'onglet tourne indéfiniment :
+        c'est qu'il y a une boucle infinie dans votre code. Solution : corrigez votre code puis actualisez le site web.
+      </p>
+      <details>
+        <summary>Cliquez ici pour voir comment corriger une boucle infinie</summary>
+        <p>Si vous avez fait une boucle infinie, l'icône de votre onglet va tourner comme ça indéfiniment
+          :<br /><br /><img src="../../images/boucle-infinie.jpg" alt="page web en boucle infinie" width="400"></p>
+        <p>Voici à quoi peut ressembler une boucle infinie dans du code :</p>
+        <p class="code">
+          let poidsClient = prochainClient.mesurerPoids();<br><br>
+
+          while (poidsClient !== 0) {<br>
+          &nbsp;&nbsp;console.log(poidsClient);<br>
+          }
+        </p>
+        <p>Le problème ici, c'est que la condition de répétition de la boucle <code>poidsClient !== 0</code> est
+          toujours vraie ! En effet, on ne modifie pas la valeur de <code>poidsClient</code> à l'intérieur de la boucle,
+          par
+          conséquent celle-ci s'exécutera sans jamais s'arrêter : vous avez fait une boucle infinie !</p>
+        <p>Voici les étapes à respecter pour se sortir de ce problème :</p>
+        <ol>
+          <li>Dans le menu de Chrome (les 3 petits points verticaux en haut à droite de la fenêtre de Chrome), allez
+            dans Plus d'outils > Gestionnaire de tâches, sélectionnez l'onglet qui pose problème dans la liste puis
+            cliquez sur le bouton <code>Arrêter le processus</code> en bas à droite.
+            <br>
+            Vous pouvez également faire un clic droit sur la barre de titre de Chrome pour sélectionner plus rapidement
+            le gestionnaire de tâches.
+            <br><br>
+            <img src="../../images/clic-droit-gestionnaire-taches.jpg"
+              alt="clic droit pour accéder au gestionnaire de tâches" style="width: 100%"></li>
+          <li>Corrigez le bogue dans votre code depuis VSCode.</li>
+          <li>Actualisez à nouveau la page web qui a été précédemment arrêtée en cliquant sur la petite flèche à gauche
+            de la barre d'adresse.<br><br><img src="../../images/actualiser.jpg" alt="flèche à cliquer pour actualiser"
+              width="400"></li>
+        </ol>
+        <h3>Attention à la sauvegarde automatique dans VSCode !</h3>
+        <p>Dans les paramètres, je vous conseille d'utiliser l'option <code>onFocusChange</code> pour la sauvegarde
+          automatique.</p>
+        <img src="../../images/autosave.jpg" alt="configuration option sauvegarde automatique vscode"
+          style="width: 100%">
+        <p>En effet, si vous avez l'option <code>afterDelay</code> de sélectionnée, ça veut dire que VSCode va
+          sauvegarder votre code toutes les X secondes. Le site web va se recharger automatiquement à ce moment là et si
+          votre code actuel génère une boucle infinie, Chrome va planter !</p>
+        <p>Pour éviter ce problème, utilisez l'option <code>onFocusChange</code> qui indique à VSCode de sauvegarder
+          votre fichier seulement si vous changez de fenêtre ou d'onglet. Vous pouvez aussi sauvegarder manuellemment
+          avec <code>⌘ + S</code> sur MacOS ou <code>Ctrl + S</code> sur Windows ou Linux quand vous voulez vérifier que
+          votre code fonctionne.</p>
+      </details>
+    </li>
+    <li>
+      <p>Si vous souhaitez déboguer votre code, utilisez le débogueur de Chrome comme je l'explique <a
+          href="https://www.youtube.com/watch?v=_imeD5H-yCw&t=557" target="_blank">dans cette vidéo</a>.</p>
+    </li>
+    <li>
+      <p>Si vous êtes bloqué et qu'aucune solution mentionnée ne fonctionne, envoyez-moi un email sur <a
+          href="mailto:jeremy@javascriptdezero.com">jeremy@javascriptdezero.com</a> en précisant le numéro de la leçon
+        sur laquelle vous travaillez et le numéro de l'exercice qui pose problème.</p>
+    </li>
+  </ul>
+
+  <h2>Objectifs</h2>
+  <ul>
+    <li>Savoir déclarer un objet, lire et modifier ses propriétés.</li>
+    <li>Utiliser un objet dans les paramètres d'une fonction.</li>
+  </ul>
+
+  <div class="enonce" id="enonce-0">
+    <h2>Exercice 0</h2>
+
+    <p>
+      Hugo a entendu parler de la notion d'objet et il veut que vous exploriez ce sujet.
+    </p>
+
+    <p>
+      Pour ça, vous décidez de créer une fonction <code>creerHoraire(monHeure, mesMinutes)</code> qui renvoie un objet
+      composé de 2 propriétés : <code>heures</code> et <code>minutes</code>.
+    </p>
+
+    <p>
+      Cet objet devra être initialisé aux valeurs <code>monHeure</code> pour la propriété <code>heures</code> et
+      <code>mesMinutes</code> pour la propriété <code>minutes</code>.
+    </p>
+
+    <p>
+      Autrement dit, l'appel <code>creerHoraire(12, 30)</code> devra renvoyer (avec le mot-clé <code>return</code>)
+      l'objet suivant :
+    </p>
+
+    <code>
+        { heures: 12, minutes: 30 }
+      </code>
+
+    <p>Créez la fonction <code>creerHoraire(monHeure, mesMinutes)</code>.</p>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-1">
+    <h2>Exercice 1</h2>
+
+    <p>
+      Maintenant que vous savez créer un objet, vous voulez lire et afficher les données qu'il contient grâce à une
+      fonction.
+    </p>
+
+    <p>
+      Vous décidez de créer une fonction <code>afficherHoraire(horaire)</code> qui prend en paramètre un objet
+      <code>horaire</code> contenant 2 propriétés <code>heures</code> et <code>minutes</code>.
+    </p>
+
+    <p>
+      Cette fonction devra retourner la phrase <code>L'horaire est 12 heures et 30 minutes.</code> pour un argument
+      <code>horaire</code> dont les propriétés <code>heures</code> et <code>minutes</code> vaudraient respectivement
+      <code>12</code> et <code>30</code>.
+    </p>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-2">
+    <h2>Exercice 2</h2>
+
+    <p>
+      Cherchons maintenant à modifier les propriétés d'un objet...
+    </p>
+
+    <p>
+      Créez une nouvelle fonction <code>avancerDe20Minutes(horaire)</code> qui ajoute 20 minutes à l'horaire passé en
+      argument. Cet horaire est toujours un objet composé de 2 propriétés <code>heures</code> et <code>minutes</code>.
+    </p>
+
+    <p>
+      Exemple avec un <code>horaire</code> de <code>{ heures: 12, minutes: 30 }</code>, la fonction devra renvoyer :
+    </p>
+
+    <code>{ heures: 12, minutes: 50 }</code>
+
+    <p>
+      Notez que vous devez gérer les cas particuliers, par exemple ajouter 20 minutes à 12h50 doit retourner 13h10 et
+      pas 12h70 😉. Pareil, pour 23h50, cela devra retourner 00h10.
+    </p>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-3">
+    <h2>Exercice 3 — Refactoring</h2>
+
+    <p>
+      Vous avez récupéré du code de vos débuts en JavaScript, à l'époque vous ne connaissiez pas encore les objets.
+      Alors vous aviez été obligé de faire une fonction à rallonge comme ça :
+      <code>validerRdv(debutRdvHeures, debutRdvMinutes, duree, finJourneeHeures, finJourneeMinutes)</code>
+    </p>
+    <p>Ça fait beaucoup de variables ! Pas super comme code...</p>
+    <p>
+      Alors vous décidez de mettre à jour cette fonction en utilisant des objets à la place des nombreuses variables.
+    </p>
+
+    <p>Voici les étapes qu'il faudra faire pour améliorer votre code :</p>
+
+    <ol>
+      <li>Remplacez les anciens paramètres de cette fonction par seulement 2 paramètres : <code>rdv</code> et
+        <code>finJournee</code>. Ils permettront de connaître l'horaire de début du RDV et sa durée (dans
+        <code>rdv</code>) et l'horaire de fin de journée (dans <code>finJournee</code>).<br>
+        Pour ce faire le paramètre <code>rdv</code> sera un objet qui va remplacer les variables
+        <code>debutRdvHeures</code>, <code>debutRdvMinutes</code> et <code>duree</code>. Celui-ci contiendra 3
+        propriétés : <code>heures</code>, <code>minutes</code> et
+        <code>duree</code>.
+      </li>
+      <li>Remplacez les variables <code>debutRdvHeures</code>, <code>debutRdvMinutes</code> et <code>duree</code> par
+        l'utilisation des propriétés <code>heures</code>, <code>minutes</code> et
+        <code>duree</code> de l'objet <code>rdv</code>.</li>
+      <li>Enfin le paramètre <code>finJournee</code> permettra de remplacer <code>finJourneeHeures</code> et
+        <code>finJourneeMinutes</code>, il contiendra 2 propriétés : <code>heures</code> et <code>minutes</code>.<br>
+        Remplacer les variables <code>finJourneeHeures</code> et <code>finJourneeMinutes</code> par l'utilisation des
+        propriétés de <code>finJournee</code>.</li>
+    </ol>
+
+    <p>C'est parti pour une séance de <em>refactoring</em> !</p>
+
+    <div class="attention">Pensez à ouvrir votre console développeur dans Chrome pour pouvoir voir les erreurs au début
+      du remaniement du code car vous allez en avoir pas mal !</div>
+    <br />
+
+    <div class="message"></div>
+  </div>
+
+  <footer>
+    Exercices de la formation <a href="https://www.javascriptdezero.com">JavaScript de Zéro</a> par
+    <a href="https://twitter.com/JeremyMouzin">Jérémy Mouzin</a>
+  </footer>
+
+  <script src="../commun/mes-outils.js"></script>
+  <script src="../commun/init.js"></script>
+  <script src="exercices.js"></script>
+  <script src="validateur/tests.js"></script>
+</body>
+
+</html>

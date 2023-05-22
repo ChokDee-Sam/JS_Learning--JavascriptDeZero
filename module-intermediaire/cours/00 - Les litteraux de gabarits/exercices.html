@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Les littéraux de gabarits (template strings) - Exercices</title>
+  <link rel="stylesheet" type="text/css" href="../commun/style.css" />
+  <link rel="icon" type="image/png" href="../../images/favicon-64px.png" />
+</head>
+
+<body>
+  <h1>Les littéraux de gabarits</h1>
+  <p>
+    Pour répondre à ces exercices, tapez votre code dans le fichier <code>exercices.js</code>.<br />
+  </p>
+  <p>
+    Pensez à bien lire l'intégralité de <a
+      href="https://github.com/javascriptdezero/module-intermediaire/tree/master/cours#exercices"
+      target="_blank">la documentation pour faire les exercices</a> avant de commencer.
+  </p>
+  <p>
+    Dernier point, lorsque vous trouvez la solution d'un exercice par vous-même, allez tout de même voir la solution que
+    je propose :
+    vous apprendrez peut-être une autre façon de faire plus intéressante !
+  </p>
+
+  <h2>En cas de problèmes techniques</h2>
+  <p>Il se peut que vous rencontriez certains problèmes techniques pour valider les exercices.<br>
+    Lisez leur solution au moins une fois avant de commencer les exercices.</p>
+  <ul>
+    <li>
+      <p>Si certains exercices précédemment validés en vert redeviennent gris et "En attente de code à tester" : c'est
+        qu'il y
+        a une erreur de syntaxe dans votre code. Solution : ouvrez la console développeur pour trouver l'erreur.</p>
+      <details>
+        <summary>Cliquez ici pour savoir comment ouvrir la console développeur de Chrome</summary>
+        <p><strong>Sur Windows ou Linux</strong> : depuis Chrome, tapez <code>Ctrl + Shift + J</code> ou allez dans le
+          menu (les 3
+          petits points verticaux en haut à droite de la fenêtre de Chrome) puis allez dans Plus d'outils > Outils de
+          développement.</p>
+        <p><strong>Sur MacOS</strong> : depuis Chrome, tapez <code>⌘ + ⌥ + J</code> (Commande + Option + J) ou bien
+          allez dans le
+          menu Afficher > Options pour les développeurs > Console JavaScript.</p>
+        <p>Le message d'erreur apparaît en rouge et est en anglais, il faudra le traduire. L'erreur vient du fichier
+          noté sur la droite au numéro de ligne indiqué. Ouvrez ce fichier dans VSCode, rendez-vous à la ligne indiquée
+          et corrigez l'erreur.<br><br>
+          <img src="../../images/console-developpeur.jpg" alt="Onglet console de la console développeur"
+            style="width: 100%">
+        </p>
+      </details>
+    </li>
+    <li>
+      <p>Si la page web ne répond plus (les clics n'ont aucun effet) ou si l'icône dans l'onglet tourne indéfiniment :
+        c'est qu'il y a une boucle infinie dans votre code. Solution : corrigez votre code puis actualisez le site web.
+      </p>
+      <details>
+        <summary>Cliquez ici pour voir comment corriger une boucle infinie</summary>
+        <p>Si vous avez fait une boucle infinie, l'icône de votre onglet va tourner comme ça indéfiniment
+          :<br /><br /><img src="../../images/boucle-infinie.jpg" alt="page web en boucle infinie" width="400"></p>
+        <p>Voici à quoi peut ressembler une boucle infinie dans du code :</p>
+        <p class="code">
+          let poidsClient = prochainClient.mesurerPoids();<br><br>
+
+          while (poidsClient !== 0) {<br>
+          &nbsp;&nbsp;console.log(poidsClient);<br>
+          }
+        </p>
+        <p>Le problème ici, c'est que la condition de répétition de la boucle <code>poidsClient !== 0</code> est
+          toujours vraie ! En effet, on ne modifie pas la valeur de <code>poidsClient</code> à l'intérieur de la boucle,
+          par
+          conséquent celle-ci s'exécutera sans jamais s'arrêter : vous avez fait une boucle infinie !</p>
+        <p>Voici les étapes à respecter pour se sortir de ce problème :</p>
+        <ol>
+          <li>Dans le menu de Chrome (les 3 petits points verticaux en haut à droite de la fenêtre de Chrome), allez
+            dans Plus d'outils > Gestionnaire de tâches, sélectionnez l'onglet qui pose problème dans la liste puis
+            cliquez sur le bouton <code>Arrêter le processus</code> en bas à droite.
+            <br>
+            Vous pouvez également faire un clic droit sur la barre de titre de Chrome pour sélectionner plus rapidement
+            le gestionnaire de tâches.
+            <br><br>
+            <img src="../../images/clic-droit-gestionnaire-taches.jpg"
+              alt="clic droit pour accéder au gestionnaire de tâches" style="width: 100%"></li>
+          <li>Corrigez le bogue dans votre code depuis VSCode.</li>
+          <li>Actualisez à nouveau la page web qui a été précédemment arrêtée en cliquant sur la petite flèche à gauche
+            de la barre d'adresse.<br><br><img src="../../images/actualiser.jpg" alt="flèche à cliquer pour actualiser"
+              width="400"></li>
+        </ol>
+        <h3>Attention à la sauvegarde automatique dans VSCode !</h3>
+        <p>Dans les paramètres, je vous conseille d'utiliser l'option <code>onFocusChange</code> pour la sauvegarde
+          automatique.</p>
+        <img src="../../images/autosave.jpg" alt="configuration option sauvegarde automatique vscode"
+          style="width: 100%">
+        <p>En effet, si vous avez l'option <code>afterDelay</code> de sélectionnée, ça veut dire que VSCode va
+          sauvegarder votre code toutes les X secondes. Le site web va se recharger automatiquement à ce moment là et si
+          votre code actuel génère une boucle infinie, Chrome va planter !</p>
+        <p>Pour éviter ce problème, utilisez l'option <code>onFocusChange</code> qui indique à VSCode de sauvegarder
+          votre fichier seulement si vous changez de fenêtre ou d'onglet. Vous pouvez aussi sauvegarder manuellemment
+          avec <code>⌘ + S</code> sur MacOS ou <code>Ctrl + S</code> sur Windows ou Linux quand vous voulez vérifier que
+          votre code fonctionne.</p>
+      </details>
+    </li>
+    <li>
+      <p>Si vous souhaitez déboguer votre code, utilisez le débogueur de Chrome comme je l'explique <a
+          href="https://www.youtube.com/watch?v=_imeD5H-yCw&t=557" target="_blank">dans cette vidéo</a>.</p>
+    </li>
+    <li>
+      <p>Si vous êtes bloqué et qu'aucune solution mentionnée ne fonctionne, envoyez-moi un email sur <a
+          href="mailto:jeremy@javascriptdezero.com">jeremy@javascriptdezero.com</a> en précisant le numéro de la leçon
+        sur laquelle vous travaillez et le numéro de l'exercice qui pose problème.</p>
+    </li>
+  </ul>
+
+  <h2>Documentation</h2>
+  <ul>
+    <li>
+      <a class="mdn" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Littéraux_gabarits"
+        target="_blank">Consulter la doc MDN sur les littéraux de gabarits</a>
+    </li>
+  </ul>
+
+  <h2>Objectifs</h2>
+  <ul>
+    <li>Comprendre le fonctionnement des littéraux de gabarits (template strings).</li>
+    <li>Savoir déclarer et utiliser des littéraux de gabarits.</li>
+    <li>Savoir utiliser des expressions JavaScript dans les espaces réservés.</li>
+    <li>Utiliser des fonctions en tant qu'expression dans un espace réservé.</li>
+  </ul>
+
+  <div class="enonce" id="enonce-0">
+    <h2>Exercice 0</h2>
+
+    <p>
+      Tom a tellement été content de votre aide récemment qu'il a parlé de vous à Hugo, son patron, qui vous a
+      embauché en tant que développeur junior chez <strong>MagiciensDuCode</strong> 🎉 !
+    </p>
+
+    <p>
+      Très heureux de votre nouveau poste, vous ne faites pas trop le malin quand même car vous êtes toujours en
+      période d'essai.
+    </p>
+
+    <p>
+      Tout de même, vous décidez de fêter ça en vous amusant à créer une petite fonction <code>merci</code> qui
+      utilisera les littéraux de gabarits (aussi appelées template strings) pour retourner (avec <code>return</code>)
+      un message de remerciement à Tom.
+    </p>
+
+    <p>Cette fonction prendra deux paramètres : <code>prenom</code> et <code>nomSociete</code>.</p>
+
+    <p>Pour l'appel de fonction suivant <code>merci("Tom", "MagiciensDuCode")</code>, elle devra retourner :</p>
+
+    <p class="code">C'est Tom qui m'a permis d'entrer dans MagiciensDuCode</p>
+
+    <p>À votre éditeur de code préféré !</p>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-1">
+    <h2>Exercice 1</h2>
+
+    <p>
+      Hugo vient vous voir pour recoder une fonctionnalité que Tom avait faite récemment. Vous savez, vous l'aviez
+      aidé pour finir son code !
+    </p>
+
+    <p>
+      Il s'agit de recoder la fonction pour formater l'adresse du destinaire sur les lettres de la campagne marketing
+      qu'Hugo veut mettre en place.
+    </p>
+
+    <p>
+      Développez une fonction <code>formaterAdresse(prenom, nom, adresse, codePostal, ville)</code> qui retourne
+      l'adresse sous la forme d'une chaîne de caractères sous cette forme :
+    </p>
+
+    <p class="code">
+      ===[ Destinataire ]===<br />
+      Tom REDOCEMIA<br />
+      21 rue du bloc d'instructions<br />
+      1337 POINT-VIRGULE<br />
+    </p>
+
+    <p>Utilisez une template string pour bénéficier du multi-lignes facilement.</p>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-2">
+    <h2>Exercice 2</h2>
+
+    <p>
+      Tom est vraiment content que vous ayez été embauché chez <strong>MagiciensDuCode</strong>. Vous allez pouvoir
+      progresser ensemble.
+    </p>
+
+    <p>
+      Il vous lance un petit défi : écrire une fonction <code>convertirEnSemaines(nombreDeJours)</code> qui retourne
+      le nombre de semaines équivalent à un nombre de jours donné <strong>sans</strong> utiliser de variable !
+    </p>
+
+    <p>Vous devrez utiliser une expression directement dans une template string pour y arriver.</p>
+
+    <p>Par exemple pour l'appel de fonction <code>convertirEnSemaines(35)</code>, elle devra retourner :</p>
+
+    <p class="code">
+      35 jours sont équivalents à 5 semaines
+    </p>
+
+    <ul>
+      <li>Une semaine contient 7 jours</li>
+      <li>
+        Pour faciliter cet exercice, les tests n'utiliseront qu'un nombre de jours qui fait "pile" N semaines.
+        Autrement dit vous n'aurez pas de valeur comme 12 jours, qui représente 1 semaine et 5 jours.
+      </li>
+      <li>
+        On refera cet exercice avec des valeurs qui ne tombent pas "pile" lorsqu'on aura vu l'opérateur modulo, dans
+        la prochaine leçon 🙂
+      </li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-3">
+    <h2>Exercice 3</h2>
+
+    <p>
+      Dernier challenge proposé par Tom (qui a lutté pour le réussir), écrivez une fonction
+      <code>templateString()</code> qui renvoie, toujours en utilisant une template string, ceci :
+    </p>
+
+    <p class="code">
+      Les template strings sont délimitées par des backticks ``.<br />
+      Pour créer un espace réservé on utilise ${}.
+    </p>
+
+    <p>Cet exercice présente plusieurs difficultés, bon courage !</p>
+
+    <div class="attention">
+      Consultez
+      <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Littéraux_gabarits" target="_blank">la
+        documentation</a>
+      si besoin.
+    </div>
+    <br />
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-4">
+    <h2>Exercice 4</h2>
+
+    <p>
+      Vous décidez de résoudre le problème de conversion des jours en semaines qui ne tombe pas "pile" sans utiliser
+      l'opérateur modulo mais en utilisant une boucle <code>while</code>. Après tout vous l'aviez fait pour les heures
+      et les minutes, avec des jours et des semaines c'est pareil !
+    </p>
+
+    <p>
+      Écrivez une fonction <code>convertirEnSemainesEtJours(nombreDeJours)</code> qui devra retourner, pour l'appel de
+      fonction <code>convertirEnSemainesEtJours(19)</code> le texte suivant :
+    </p>
+
+    <p class="code">19 jours, c'est équivalent à 2 semaines et 5 jours</p>
+
+    <p>
+      Petite difficulté supplémentaire, vous devrez gérez les pluriels des mots <code>semaine(s)</code> et
+      <code>jour(s)</code> (jour apparaît 2 fois dans la phrase) comme ceci :
+    </p>
+
+    <p class="code">
+      0 jour, c'est équivalent à 0 semaine et 0 jour<br />
+      1 jour, c'est équivalent à 0 semaine et 1 jour<br />
+      3 jours, c'est équivalent à 0 semaine et 3 jours<br />
+      7 jours, c'est équivalent à 1 semaine et 0 jour<br />
+      8 jours, c'est équivalent à 1 semaine et 1 jour<br />
+      9 jours, c'est équivalent à 1 semaine et 2 jours<br />
+      19 jours, c'est équivalent à 2 semaines et 5 jours<br />
+    </p>
+
+    <ul>
+      <li>
+        On mettra un 's' à la fin des mots semaine et jour lorsque la valeur précédante est strictement supérieure à 1
+      </li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-5">
+    <h2>Exercice 5</h2>
+
+    <p>
+      Hugo aimerait améliorer la présentation du numéro client sur la lettre de marketing. Il aimerait y ajouter le
+      statut du client (si c'est un client standard ou premium).
+    </p>
+
+    <p>
+      Pour rappel, les clients premium ont un numéro de client supérieur ou égal à <code>5000</code> et strictement
+      inférieur à <code>7000</code>. Leur numéro doit être affiché sous la forme <code>PR5132</code> au lieu de
+      <code>425132</code> (pour le
+      client numéro <code>5132</code> par exemple).
+    </p>
+
+    <p>Hugo aimerait qu'on affiche le type de compte client entre parenthèses comme ça :</p>
+
+    <p class="code">
+      N° de client : PR5842 (premium)<br />
+      N° de client : 421864 (standard)
+    </p>
+
+    <p>
+      Vous récupérez le code de Tom qui contient la fonction <code>formaterNumeroClient(numeroClient)</code> qui renvoie
+      le numéro client formaté <code>PRXXXX</code> ou <code>42XXXX</code> en fonction du <code>numeroClient</code>
+      donné.
+    </p>
+
+    <p>En vous appuyant sur cette fonction, rédigez une nouvelle fonction <code>retournerReference(numeroClient)</code>
+      qui renvoie la référence client avec le type de compte entre parenthèses à partir d'un numéro de client donné.</p>
+
+    <p>Par exemple pour l'appel de fonction <code>retournerReference(1864)</code>, elle doit retourner :</p>
+
+    <p class="code">
+      N° de client : 421864 (standard)
+    </p>
+
+    <p>Exploitez la fonction de Tom pour retourner, grâce à une template string, la référence formatée d'un client.</p>
+
+    <div class="message"></div>
+  </div>
+
+  <footer>
+    Exercices de la formation <a href="https://www.javascriptdezero.com">JavaScript de Zéro</a> par
+    <a href="https://twitter.com/JeremyMouzin">Jérémy Mouzin</a>
+  </footer>
+
+  <script src="../commun/mes-outils.js"></script>
+  <script src="../commun/init.js"></script>
+  <script src="exercices.js"></script>
+  <script src="validateur/tests.js"></script>
+</body>
+
+</html>

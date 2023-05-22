@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Math</title>
+  <link rel="stylesheet" type="text/css" href="../commun/style.css" />
+  <link rel="icon" type="image/png" href="../../images/favicon-64px.png" />
+</head>
+
+<body>
+  <h1>Math</h1>
+  <p>
+    Pour répondre à ces exercices, tapez votre code dans le fichier <code>exercices.js</code>.<br />
+  </p>
+  <p>
+    Pensez à bien lire l'intégralité de <a
+      href="https://github.com/javascriptdezero/module-intermediaire/tree/master/cours#exercices"
+      target="_blank">la documentation pour faire les exercices</a> avant de commencer.
+  </p>
+  <p>
+    Dernier point, lorsque vous trouvez la solution d'un exercice par vous-même, allez tout de même voir la solution que
+    je propose :
+    vous apprendrez peut-être une autre façon de faire plus intéressante !
+  </p>
+
+  <h2>En cas de problèmes techniques</h2>
+  <p>Il se peut que vous rencontriez certains problèmes techniques pour valider les exercices.<br>
+    Lisez leur solution au moins une fois avant de commencer les exercices.</p>
+  <ul>
+    <li>
+      <p>Si certains exercices précédemment validés en vert redeviennent gris et "En attente de code à tester" : c'est
+        qu'il y
+        a une erreur de syntaxe dans votre code. Solution : ouvrez la console développeur pour trouver l'erreur.</p>
+      <details>
+        <summary>Cliquez ici pour savoir comment ouvrir la console développeur de Chrome</summary>
+        <p><strong>Sur Windows ou Linux</strong> : depuis Chrome, tapez <code>Ctrl + Shift + J</code> ou allez dans le
+          menu (les 3
+          petits points verticaux en haut à droite de la fenêtre de Chrome) puis allez dans Plus d'outils > Outils de
+          développement.</p>
+        <p><strong>Sur MacOS</strong> : depuis Chrome, tapez <code>⌘ + ⌥ + J</code> (Commande + Option + J) ou bien
+          allez dans le
+          menu Afficher > Options pour les développeurs > Console JavaScript.</p>
+        <p>Le message d'erreur apparaît en rouge et est en anglais, il faudra le traduire. L'erreur vient du fichier
+          noté sur la droite au numéro de ligne indiqué. Ouvrez ce fichier dans VSCode, rendez-vous à la ligne indiquée
+          et corrigez l'erreur.<br><br>
+          <img src="../../images/console-developpeur.jpg" alt="Onglet console de la console développeur"
+            style="width: 100%">
+        </p>
+      </details>
+    </li>
+    <li>
+      <p>Si la page web ne répond plus (les clics n'ont aucun effet) ou si l'icône dans l'onglet tourne indéfiniment :
+        c'est qu'il y a une boucle infinie dans votre code. Solution : corrigez votre code puis actualisez le site web.
+      </p>
+      <details>
+        <summary>Cliquez ici pour voir comment corriger une boucle infinie</summary>
+        <p>Si vous avez fait une boucle infinie, l'icône de votre onglet va tourner comme ça indéfiniment
+          :<br /><br /><img src="../../images/boucle-infinie.jpg" alt="page web en boucle infinie" width="400"></p>
+        <p>Voici à quoi peut ressembler une boucle infinie dans du code :</p>
+        <p class="code">
+          let poidsClient = prochainClient.mesurerPoids();<br><br>
+
+          while (poidsClient !== 0) {<br>
+          &nbsp;&nbsp;console.log(poidsClient);<br>
+          }
+        </p>
+        <p>Le problème ici, c'est que la condition de répétition de la boucle <code>poidsClient !== 0</code> est
+          toujours vraie ! En effet, on ne modifie pas la valeur de <code>poidsClient</code> à l'intérieur de la boucle,
+          par
+          conséquent celle-ci s'exécutera sans jamais s'arrêter : vous avez fait une boucle infinie !</p>
+        <p>Voici les étapes à respecter pour se sortir de ce problème :</p>
+        <ol>
+          <li>Dans le menu de Chrome (les 3 petits points verticaux en haut à droite de la fenêtre de Chrome), allez
+            dans Plus d'outils > Gestionnaire de tâches, sélectionnez l'onglet qui pose problème dans la liste puis
+            cliquez sur le bouton <code>Arrêter le processus</code> en bas à droite.
+            <br>
+            Vous pouvez également faire un clic droit sur la barre de titre de Chrome pour sélectionner plus rapidement
+            le gestionnaire de tâches.
+            <br><br>
+            <img src="../../images/clic-droit-gestionnaire-taches.jpg"
+              alt="clic droit pour accéder au gestionnaire de tâches" style="width: 100%"></li>
+          <li>Corrigez le bogue dans votre code depuis VSCode.</li>
+          <li>Actualisez à nouveau la page web qui a été précédemment arrêtée en cliquant sur la petite flèche à gauche
+            de la barre d'adresse.<br><br><img src="../../images/actualiser.jpg" alt="flèche à cliquer pour actualiser"
+              width="400"></li>
+        </ol>
+        <h3>Attention à la sauvegarde automatique dans VSCode !</h3>
+        <p>Dans les paramètres, je vous conseille d'utiliser l'option <code>onFocusChange</code> pour la sauvegarde
+          automatique.</p>
+        <img src="../../images/autosave.jpg" alt="configuration option sauvegarde automatique vscode"
+          style="width: 100%">
+        <p>En effet, si vous avez l'option <code>afterDelay</code> de sélectionnée, ça veut dire que VSCode va
+          sauvegarder votre code toutes les X secondes. Le site web va se recharger automatiquement à ce moment là et si
+          votre code actuel génère une boucle infinie, Chrome va planter !</p>
+        <p>Pour éviter ce problème, utilisez l'option <code>onFocusChange</code> qui indique à VSCode de sauvegarder
+          votre fichier seulement si vous changez de fenêtre ou d'onglet. Vous pouvez aussi sauvegarder manuellemment
+          avec <code>⌘ + S</code> sur MacOS ou <code>Ctrl + S</code> sur Windows ou Linux quand vous voulez vérifier que
+          votre code fonctionne.</p>
+      </details>
+    </li>
+    <li>
+      <p>Si vous souhaitez déboguer votre code, utilisez le débogueur de Chrome comme je l'explique <a
+          href="https://www.youtube.com/watch?v=_imeD5H-yCw&t=557" target="_blank">dans cette vidéo</a>.</p>
+    </li>
+    <li>
+      <p>Si vous êtes bloqué et qu'aucune solution mentionnée ne fonctionne, envoyez-moi un email sur <a
+          href="mailto:jeremy@javascriptdezero.com">jeremy@javascriptdezero.com</a> en précisant le numéro de la leçon
+        sur laquelle vous travaillez et le numéro de l'exercice qui pose problème.</p>
+    </li>
+  </ul>
+
+  <h2>Documentation</h2>
+  <ul>
+    <li>
+      <a class="mdn" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math"
+        target="_blank">Consulter la doc MDN sur le type Math</a>
+    </li>
+  </ul>
+
+  <h2>Objectifs</h2>
+  <ul>
+    <li>Comprendre le fonctionnement général de la librairie Math.</li>
+    <li>Savoir utiliser les méthodes simples disponibles dans cette librairie et notamment :
+      <ul>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/abs" class="mdn"
+            target="_blank">abs</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/ceil" class="mdn"
+            target="_blank">ceil</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/floor" class="mdn"
+            target="_blank">floor</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/hypot" class="mdn"
+            target="_blank">hypot</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/max" class="mdn"
+            target="_blank">max</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/min" class="mdn"
+            target="_blank">min</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/pow" class="mdn"
+            target="_blank">pow</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random" class="mdn"
+            target="_blank">random</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/round" class="mdn"
+            target="_blank">round</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/sign" class="mdn"
+            target="_blank">sign</a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/trunc" class="mdn"
+            target="_blank">trunc</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Structure des exercices</h2>
+  
+  <h3>Exercices d'échauffement</h3>
+  <p>Dans un premier temps, vous allez devoir utiliser les méthodes listées ci-dessus une par une, dans l'ordre, pour réaliser les exercices d'échauffement. Vous ferez quelques exercices sur <code>abs()</code>, puis quelques exercices sur <code>ceil()</code>, puis <code>floor()</code> etc.</p>
+
+  <p>Même si ces exercices peuvent parfois être un peu rébarbatifs, faites-les au moins une fois. L'objectif est de vous familiariser avec chacune de ces méthodes pour retenir l'utilité principale de celles-ci.</p>
+  
+  <h3>Exercices finaux</h3>
+  <p>Une fois l'échauffement terminé, les exercices suivants vont devenir un peu plus difficiles : vous devrez utiliser plusieurs des méthodes vues précédemment pour répondre à l'énoncé.</p>
+  
+  <h3>Indices</h3>
+  <p>Pour les exercices finaux vous pourrez afficher un indice qui vous indiquera quelles méthodes utiliser pour répondre à l'énoncé. N'affichez l'indice que si vous avez passé au moins 30 min sur un exercice. Le but n'est pas d'aller le plus vite possible mais de faire un maximum d'exercices <strong>seul</strong>.</p>
+  <p>L'objectif est de vous apprendre à utiliser les nouveaux outils à votre disposition pour répondre à des exercices de plus en plus complexes.</p>
+  <p>Vous développerez votre sens logique et votre capacité à assembler des briques de base (les méthodes) entre elles pour répondre à des énoncés complexes.</p>
+
+  <h2>Fonctionnement des exercices</h2>
+
+  <p>Tous les exercices fonctionnent sur le même principe : vous devez rédiger une fonction à partir de zéro et celle-ci devra renvoyer (avec le mot-clé <code>return</code>) la solution de l'énoncé.</p>
+
+  <div class="enonce" id="enonce-0">
+    <h2>Exercice 0</h2>
+
+    <p>
+      Créez une fonction <code>abs0(nombre)</code> qui renvoie la valeur absolue de <code>nombre</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>abs0(12)</code> renverra <code>12</code>.</li>
+      <li><code>abs0(-5)</code> renverra <code>5</code>.</li>
+      <li><code>abs0(0)</code> renverra <code>0</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-1">
+    <h2>Exercice 1</h2>
+
+    <p>
+      Créez une fonction <code>ceil0(nombre)</code> qui renvoie le plus petit entier supérieur ou égal à <code>nombre</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>ceil0(0)</code> renverra <code>0</code>.</li>
+      <li><code>ceil0(5.2)</code> renverra <code>6</code>.</li>
+      <li><code>ceil0(8.9)</code> renverra <code>9</code>.</li>
+      <li><code>ceil0(-42.3)</code> renverra <code>-42</code>.</li>
+      <li><code>ceil0(-0.8)</code> renverra <code>0</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-2">
+    <h2>Exercice 2</h2>
+
+    <p>
+      Créez une fonction <code>floor0(nombre)</code> qui renvoie le plus grand entier inférieur ou égal à <code>nombre</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>floor0(0)</code> renverra <code>0</code>.</li>
+      <li><code>floor0(5.2)</code> renverra <code>5</code>.</li>
+      <li><code>floor0(8.9)</code> renverra <code>8</code>.</li>
+      <li><code>floor0(-42.3)</code> renverra <code>-43</code>.</li>
+      <li><code>floor0(-0.8)</code> renverra <code>-1</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-3">
+    <h2>Exercice 3</h2>
+
+    <p>
+      Créez une fonction <code>hypot0(cote1, cote2)</code> qui renvoie l'hypothénuse d'un triangle rectangle dont les longueurs des côtés adjacent et opposé sont passées en arguments <code>cote1, cote2</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>hypot0(3, 4)</code> renverra <code>5</code>.</li>
+      <li><code>hypot0(0, 5)</code> renverra <code>5</code>.</li>
+      <li><code>hypot0(12, 28)</code> renverra <code>30.463092423455635</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-4">
+    <h2>Exercice 4</h2>
+
+    <p>
+      Créez une fonction <code>hypot1(nombre1, nombre2, nombre3)</code> qui renvoie la racine carrée de la somme des carrés de <code>nombre1</code>, <code>nombre2</code>, <code>nombre3</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>hypot1(1, 2, 3)</code> renverra <code>2.23606797749979</code>.</li>
+      <li><code>hypot1(42, 12, 34)</code> renverra <code>43.68065933568311</code>.</li>
+      <li><code>hypot1(0, 6, 0)</code> renverra <code>6</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-5">
+    <h2>Exercice 5</h2>
+
+    <p>
+      Créez une fonction <code>max0(nombre1, nombre2)</code> qui renvoie le plus grand nombre entre <code>nombre1</code> et <code>nombre2</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>max0(5, 12)</code> renverra <code>12</code>.</li>
+      <li><code>max0(-4, 8)</code> renverra <code>8</code>.</li>
+      <li><code>max0(-12, -5)</code> renverra <code>-5</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-6">
+    <h2>Exercice 6</h2>
+
+    <p>
+      Créez une fonction <code>max0(nombre1, nombre2, nombre3)</code> qui renvoie le plus grand nombre entre <code>nombre1</code> et <code>nombre2</code> et <code>nombre3</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>max0(5, 12, 20)</code> renverra <code>20</code>.</li>
+      <li><code>max0(-4, 8, 0)</code> renverra <code>8</code>.</li>
+      <li><code>max0(-12, -5, -25)</code> renverra <code>-5</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-7">
+    <h2>Exercice 7</h2>
+
+    <p>
+      Créez une fonction <code>min0(nombre1, nombre2)</code> qui renvoie le plus petit nombre entre <code>nombre1</code> et <code>nombre2</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>min0(5, 12)</code> renverra <code>5</code>.</li>
+      <li><code>min0(-4, 8)</code> renverra <code>-4</code>.</li>
+      <li><code>min0(-12, -5)</code> renverra <code>-12</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-8">
+    <h2>Exercice 8</h2>
+
+    <p>
+      Créez une fonction <code>min0(nombre1, nombre2, nombre3)</code> qui renvoie le plus petit nombre entre <code>nombre1</code> et <code>nombre2</code> et <code>nombre3</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>min0(5, 12, 20)</code> renverra <code>5</code>.</li>
+      <li><code>min0(-4, 8, 0)</code> renverra <code>-4</code>.</li>
+      <li><code>min0(-12, -5, -25)</code> renverra <code>-25</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-9">
+    <h2>Exercice 9</h2>
+
+    <p>
+      Créez une fonction <code>pow0(nombre, puissance)</code> qui renvoie le <code>nombre</code> portée à la <code>puissance</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>pow0(42, 2)</code> renverra <code>1764</code>.</li>
+      <li><code>pow0(2, 12)</code> renverra <code>4096</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-10">
+    <h2>Exercice 10</h2>
+
+    <p>
+      Créez une fonction <code>random0(limiteHaute)</code> qui renvoie un nombre aléatoire entre <code>0</code> (inclus) et <code>limiteHaute</code> (exclu).
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>random0(42)</code> renverra toujours un nombre entre <code>0</code> (inclus) et <code>42</code> (exclu).</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-11">
+    <h2>Exercice 11</h2>
+
+    <p>
+      Créez une fonction <code>random1(limiteBasse, limiteHaute)</code> qui renvoie un nombre aléatoire entre <code>limiteBasse</code> (inclus) et <code>limiteHaute</code> (exclu).
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>random1(42)</code> renverra toujours un nombre entre <code>0</code> (inclus) et <code>42</code> (exclu).</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-12">
+    <h2>Exercice 12</h2>
+
+    <p>
+      Créez une fonction <code>round0(nombre)</code> qui renvoie le <code>nombre</code> arrondi à l'entier le plus proche.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>round0(42.2)</code> renverra <code>42</code>.</li>
+      <li><code>round0(42.5)</code> renverra <code>43</code>.</li>
+      <li><code>round0(42.9)</code> renverra <code>43</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-13">
+    <h2>Exercice 13</h2>
+
+    <p>
+      Créez une fonction <code>sign0(nombre)</code> qui renvoie <code>0</code> si <code>nombre</code> est <code>nul</code>, <code>1</code> s'il est <code>positif</code> et <code>-1</code> s'il est <code>négatif</code>.
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>sign0(5)</code> renverra <code>1</code>.</li>
+      <li><code>sign0(0)</code> renverra <code>0</code>.</li>
+      <li><code>sign0(-4)</code> renverra <code>-1</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-14">
+    <h2>Exercice 14</h2>
+
+    <p>
+      Créez une fonction <code>trunc0(nombre)</code> qui renvoie la partie entière de ce nombre (c'est-à-dire qui retire les décimales);
+    </p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><code>trunc0(5.2)</code> renverra <code>5</code>.</li>
+      <li><code>trunc0(5.8)</code> renverra <code>5</code>.</li>
+      <li><code>trunc0(-45.2)</code> renverra <code>-45</code>.</li>
+      <li><code>trunc0(-45.8)</code> renverra <code>-45</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <h2>🎉 Félicitations vous avez fini l'échauffement ! 🎉</h2>
+
+  <p>Maintenant on va passer aux exercices finaux, ceux qui vont vous faire réfléchir 🤯.</p>
+
+  <p>L'objectif est de vous entraîner à exploiter les différentes méthodes vues jusqu'à présent pour résoudre les énoncés. Quelques conseils supplémentaires :</p>
+
+  <ul>
+    <li>Faites les exercices dans l'ordre, leur difficulté est croissante.</li>
+
+    <li>N'affichez pas les indices avant d'avoir planché sur l'exercice pendant 30 min au moins.</li>
+
+    <li>Vous pouvez/devrez utiliser tout ce qu'on a vu jusqu'à présent : variables, boucles, conditions, etc. et bien sûr les méthodes disponibles <strong style="color: var(--jaune);">sur les Strings, les Arrays, les Numbers et la librairie Math bien sûr !</strong></li>
+
+    <li>Il faudra parfois utiliser plusieurs méthodes ensemble pour répondre à l'énoncé.</li>
+
+    <li>Prenez votre temps, il vaut mieux réussir un exercice en ayant passé 1h dessus que d'afficher l'indice trop vite ou de regarder la solution.</li>
+  </ul>
+
+  <p>Bon courage !</p>
+
+  <h2>Exercices finaux</h2>
+
+  <div class="enonce" id="enonce-15">
+    <h2>Exercice 0 - Thermomètre endommagé</h2>
+
+    <p>
+      La sonde de température du robot <em>Persévérance</em> qui a atterit sur Mars en février 2021 a été endommagé. Elle ne retourne plus la température absolue actuelle mais l'écart de température avec la dernière prise de température !</p>
+
+    <p>La dernière température absolue relevée était de <code>-54 °C</code> (oui ça caille sur Mars !).</p>
+
+    <p>Vous êtes chargé de créer une fonction <code>corrigerTemp(liste)</code> qui transforme une <code>liste</code> de différences de températures en une liste de températures absolues.</p>
+
+    <p>En plus de ne plus indiquer la température absolue, les valeurs de différences de température renvoyées ont des décimales inutiles, tronquez-les avant de faire vos calculs !</p>
+
+    <p>L'argument <code>liste</code> est un tableau contenant des nombres représentants les différences de températures observées chaque jour sur Mars.</p>
+
+    <p>Votre fonction doit renvoyer un tableau avec les températures absolues pour chaque jour, voici un exemple :</p>
+    <ol>
+      <li>Soit <code>liste = [-2.34, -8.12, 5.74, 20.8, -30.82]</code></li>
+      <li>La valeur initiale de température est toujours la même : <code>-54 °C</code></li>
+      <li>La valeur de retour devra être <code>[-56, -64, -59, -39, -69]</code></li>
+    </ol>
+
+    <div class="attention">Pensez à bien utiliser la température absolue du jour précédent pour calculer celle du jour d'après.</div><br>
+
+    <details>
+      <summary>Indice</summary>
+      <p>Pour tronquer chaque valeur de différence de température il suffit d'utiliser la méthode <code>Math.trunc()</code>. Ensuite il faut parcourir dans une boucle chaque valeur. Utilisez une variable <code>temperaturePrecedente</code> par exemple pour stocker la température absolue du jour d'avant. Il ne reste plus qu'à ajouter la valeur de différence de température à celle-ci puis à ajouter le résultat dans un tableau <code>resultat</code>.</p>
+    </details>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-16">
+    <h2>Exercice 1 - Vent solaire</h2>
+
+    <p>
+      Un vent solaire important provoque une perturbation électromagnétique sur le robot : son capteur de pression atmosphérique déraille complètement !
+    </p>
+
+    <p>Parfois il renvoie des valeurs négatives alors qu'il ne devrait renvoyer que des valeurs positives. Par ailleurs, il renvoie des valeurs avec une partie décimale alors qu'elles devraient être arrondies à l'entier le plus proche.</p>
+
+    <p>Vous êtes chargé de créer une fonction <code>corrigerPression(liste)</code> qui corrige une <code>liste</code> de valeurs de pression erronées en une liste avec des valeurs correctes.</p>
+
+    <p>L'argument <code>liste</code> est un tableau contenant des nombres représentants la pression atmosphérique observées chaque jour sur Mars.</p>
+
+    <p>Votre fonction doit renvoyer un tableau avec les pressions corrigées pour chaque jour, voici un exemple :</p>
+    <ol>
+      <li>Soit <code>liste = [824, -840, 812, -822.54, -830.12]</code></li>
+      <li>Toutes les valeurs corrigées doivent être positives. Donc par exemple la valeur <code>-840</code> doit être corrigée pour la valeur <code>840</code></li>
+      <li>Toutes les valeurs doivent être arrondies à l'entier le plus proche. Donc par exemple la valeur <code>-822.54</code> doit être corrigée pour la valeur <code>823</code> : on transforme d'abord en nombre positif puis on arrondit.</li>
+      <li>La valeur de retour devra être <code>[824, 840, 812, 823, 830]</code></li>
+    </ol>
+
+    <details>
+      <summary>Indice</summary>
+      <p>Lisez bien l'énoncé, il faut d'abord corriger le signe de la valeur et ensuite corriger l'arrondi. Pour corriger le signe il suffit d'utiliser <code>Math.abs()</code> pour toujours avoir une valeur positive. Pour corriger l'arrondi il suffit d'utiliser <code>Math.round()</code>. La même mécanique de boucle que l'exercice précédent peut être utilisée.</p>
+    </details>
+
+    <div class="message"></div>
+  </div>
+
+  <footer>
+    Exercices de la formation <a href="https://www.javascriptdezero.com">JavaScript de Zéro</a> par
+    <a href="https://twitter.com/JeremyMouzin">Jérémy Mouzin</a>
+  </footer>
+
+  <script src="../commun/mes-outils.js"></script>
+  <script src="../commun/init.js"></script>
+  <script src="exercices.js"></script>
+  <script src="validateur/tests.js"></script>
+</body>
+
+</html>

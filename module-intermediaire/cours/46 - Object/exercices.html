@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Object</title>
+  <link rel="stylesheet" type="text/css" href="../commun/style.css" />
+  <link rel="icon" type="image/png" href="../../images/favicon-64px.png" />
+</head>
+
+<body>
+  <h1>Object</h1>
+  <p>
+    Pour répondre à ces exercices, tapez votre code dans le fichier <code>exercices.js</code>.<br />
+  </p>
+  <p>
+    Pensez à bien lire l'intégralité de <a
+      href="https://github.com/javascriptdezero/module-intermediaire/tree/master/cours#exercices"
+      target="_blank">la documentation pour faire les exercices</a> avant de commencer.
+  </p>
+  <p>
+    Dernier point, lorsque vous trouvez la solution d'un exercice par vous-même, allez tout de même voir la solution que
+    je propose :
+    vous apprendrez peut-être une autre façon de faire plus intéressante !
+  </p>
+
+  <h2>En cas de problèmes techniques</h2>
+  <p>Il se peut que vous rencontriez certains problèmes techniques pour valider les exercices.<br>
+    Lisez leur solution au moins une fois avant de commencer les exercices.</p>
+  <ul>
+    <li>
+      <p>Si certains exercices précédemment validés en vert redeviennent gris et "En attente de code à tester" : c'est
+        qu'il y
+        a une erreur de syntaxe dans votre code. Solution : ouvrez la console développeur pour trouver l'erreur.</p>
+      <details>
+        <summary>Cliquez ici pour savoir comment ouvrir la console développeur de Chrome</summary>
+        <p><strong>Sur Windows ou Linux</strong> : depuis Chrome, tapez <code>Ctrl + Shift + J</code> ou allez dans le
+          menu (les 3
+          petits points verticaux en haut à droite de la fenêtre de Chrome) puis allez dans Plus d'outils > Outils de
+          développement.</p>
+        <p><strong>Sur MacOS</strong> : depuis Chrome, tapez <code>⌘ + ⌥ + J</code> (Commande + Option + J) ou bien
+          allez dans le
+          menu Afficher > Options pour les développeurs > Console JavaScript.</p>
+        <p>Le message d'erreur apparaît en rouge et est en anglais, il faudra le traduire. L'erreur vient du fichier
+          noté sur la droite au numéro de ligne indiqué. Ouvrez ce fichier dans VSCode, rendez-vous à la ligne indiquée
+          et corrigez l'erreur.<br><br>
+          <img src="../../images/console-developpeur.jpg" alt="Onglet console de la console développeur"
+            style="width: 100%">
+        </p>
+      </details>
+    </li>
+    <li>
+      <p>Si la page web ne répond plus (les clics n'ont aucun effet) ou si l'icône dans l'onglet tourne indéfiniment :
+        c'est qu'il y a une boucle infinie dans votre code. Solution : corrigez votre code puis actualisez le site web.
+      </p>
+      <details>
+        <summary>Cliquez ici pour voir comment corriger une boucle infinie</summary>
+        <p>Si vous avez fait une boucle infinie, l'icône de votre onglet va tourner comme ça indéfiniment
+          :<br /><br /><img src="../../images/boucle-infinie.jpg" alt="page web en boucle infinie" width="400"></p>
+        <p>Voici à quoi peut ressembler une boucle infinie dans du code :</p>
+        <p class="code">
+          let poidsClient = prochainClient.mesurerPoids();<br><br>
+
+          while (poidsClient !== 0) {<br>
+          &nbsp;&nbsp;console.log(poidsClient);<br>
+          }
+        </p>
+        <p>Le problème ici, c'est que la condition de répétition de la boucle <code>poidsClient !== 0</code> est
+          toujours vraie ! En effet, on ne modifie pas la valeur de <code>poidsClient</code> à l'intérieur de la boucle,
+          par
+          conséquent celle-ci s'exécutera sans jamais s'arrêter : vous avez fait une boucle infinie !</p>
+        <p>Voici les étapes à respecter pour se sortir de ce problème :</p>
+        <ol>
+          <li>Dans le menu de Chrome (les 3 petits points verticaux en haut à droite de la fenêtre de Chrome), allez
+            dans Plus d'outils > Gestionnaire de tâches, sélectionnez l'onglet qui pose problème dans la liste puis
+            cliquez sur le bouton <code>Arrêter le processus</code> en bas à droite.
+            <br>
+            Vous pouvez également faire un clic droit sur la barre de titre de Chrome pour sélectionner plus rapidement
+            le gestionnaire de tâches.
+            <br><br>
+            <img src="../../images/clic-droit-gestionnaire-taches.jpg"
+              alt="clic droit pour accéder au gestionnaire de tâches" style="width: 100%"></li>
+          <li>Corrigez le bogue dans votre code depuis VSCode.</li>
+          <li>Actualisez à nouveau la page web qui a été précédemment arrêtée en cliquant sur la petite flèche à gauche
+            de la barre d'adresse.<br><br><img src="../../images/actualiser.jpg" alt="flèche à cliquer pour actualiser"
+              width="400"></li>
+        </ol>
+        <h3>Attention à la sauvegarde automatique dans VSCode !</h3>
+        <p>Dans les paramètres, je vous conseille d'utiliser l'option <code>onFocusChange</code> pour la sauvegarde
+          automatique.</p>
+        <img src="../../images/autosave.jpg" alt="configuration option sauvegarde automatique vscode"
+          style="width: 100%">
+        <p>En effet, si vous avez l'option <code>afterDelay</code> de sélectionnée, ça veut dire que VSCode va
+          sauvegarder votre code toutes les X secondes. Le site web va se recharger automatiquement à ce moment là et si
+          votre code actuel génère une boucle infinie, Chrome va planter !</p>
+        <p>Pour éviter ce problème, utilisez l'option <code>onFocusChange</code> qui indique à VSCode de sauvegarder
+          votre fichier seulement si vous changez de fenêtre ou d'onglet. Vous pouvez aussi sauvegarder manuellemment
+          avec <code>⌘ + S</code> sur MacOS ou <code>Ctrl + S</code> sur Windows ou Linux quand vous voulez vérifier que
+          votre code fonctionne.</p>
+      </details>
+    </li>
+    <li>
+      <p>Si vous souhaitez déboguer votre code, utilisez le débogueur de Chrome comme je l'explique <a
+          href="https://www.youtube.com/watch?v=_imeD5H-yCw&t=557" target="_blank">dans cette vidéo</a>.</p>
+    </li>
+    <li>
+      <p>Si vous êtes bloqué et qu'aucune solution mentionnée ne fonctionne, envoyez-moi un email sur <a
+          href="mailto:jeremy@javascriptdezero.com">jeremy@javascriptdezero.com</a> en précisant le numéro de la leçon
+        sur laquelle vous travaillez et le numéro de l'exercice qui pose problème.</p>
+    </li>
+  </ul>
+
+  <h2>Documentation</h2>
+  <ul>
+    <li>
+      <a class="mdn" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object"
+        target="_blank">Consulter la doc MDN sur le type Object</a>
+    </li>
+  </ul>
+
+  <h2>Objectifs</h2>
+  <ul>
+    <li>Comprendre le fonctionnement général du type Object.</li>
+    <li>Savoir déclarer et utiliser les Objects.</li>
+    <li>Savoir utiliser les méthodes simples disponibles sur les Objects et notamment :
+      <ul>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/assign"
+          class="mdn" target="_blank">assign</a></li>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/entries"
+          class="mdn" target="_blank">entries</a></li>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys" class="mdn"
+          target="_blank">keys</a></li>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/values"
+          class="mdn" target="_blank">values</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Structure des exercices</h2>
+  
+  <h3>Exercices d'échauffement</h3>
+  <p>Dans un premier temps, vous allez devoir utiliser les méthodes listées ci-dessus une par une, dans l'ordre, pour réaliser les exercices d'échauffement. Vous ferez quelques exercices sur <code>assign()</code>, <code>entries()</code>, puis <code>keys()</code> etc.</p>
+
+  <p>Même si ces exercices peuvent parfois être un peu rébarbatifs, faites-les au moins une fois. L'objectif est de vous familiariser avec chacune de ces méthodes pour retenir l'utilité principale de celles-ci.</p>
+  
+  <h3>Exercices finaux</h3>
+  <p>Une fois l'échauffement terminé, les exercices suivants vont devenir un peu plus difficiles : vous devrez utiliser plusieurs des méthodes vues précédemment pour répondre à l'énoncé.</p>
+  
+  <h3>Indices</h3>
+  <p>Pour les exercices finaux vous pourrez afficher un indice qui vous indiquera quelles méthodes utiliser pour répondre à l'énoncé. N'affichez l'indice que si vous avez passé au moins 30 min sur un exercice. Le but n'est pas d'aller le plus vite possible mais de faire un maximum d'exercices <strong>seul</strong>.</p>
+  <p>L'objectif est de vous apprendre à utiliser les nouveaux outils à votre disposition pour répondre à des exercices de plus en plus complexes.</p>
+  <p>Vous développerez votre sens logique et votre capacité à assembler des briques de base (les méthodes) entre elles pour répondre à des énoncés complexes.</p>
+
+  <h2>Fonctionnement des exercices</h2>
+
+  <p>Tous les exercices fonctionnent sur le même principe : vous devez rédiger une fonction à partir de zéro et celle-ci devra renvoyer (avec le mot-clé <code>return</code>) la solution de l'énoncé.</p>
+
+  <div class="enonce" id="enonce-0">
+    <h2>Exercice 0</h2>
+
+    <p>
+      Créez une fonction <code>assign0(objet1, objet2)</code> qui renvoie un objet contenant toutes les propriétés et valeurs contenues dans <code>objet1</code> et <code>objet2</code>.
+    </p>
+
+    <p>Exemple :</p>
+    <ul>
+      <li><code>assign0({prenom: "Tom"}, {nom: "Redocemia"})</code> renverra un objet <code>{prenom: "Tom", nom: "Redocemia"}</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-1">
+    <h2>Exercice 1</h2>
+
+    <p>
+      Créez une fonction <code>entries0(objet)</code> qui renvoie un tableau dont chaque item représente une paire <code>[clé, valeur]</code> de <code>objet</code>.
+    </p>
+
+    <p>Exemple :</p>
+    <ul>
+      <li><code>entries0({prenom: "Tom", nom: "Redocemia"})</code> renverra <code>[["prenom", "Tom"], ["nom", "Redocemia"]]</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-2">
+    <h2>Exercice 2</h2>
+
+    <p>
+      Créez une fonction <code>keys0(objet)</code> qui renvoie un taleau contenant la liste des propriétés de <code>objet</code>.
+    </p>
+
+    <p>Exemple :</p>
+    <ul>
+      <li><code>keys0({prenom: "Tom", nom: "Redocemia"})</code> renverra <code>["prenom", "nom"]</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-3">
+    <h2>Exercice 3</h2>
+
+    <p>
+      Créez une fonction <code>values0(objet)</code> qui renvoie un taleau contenant la liste des valeurs de <code>objet</code>.
+    </p>
+
+    <p>Exemple :</p>
+    <ul>
+      <li><code>values0({prenom: "Tom", nom: "Redocemia"})</code> renverra <code>["Tom", "Redocemia"]</code>.</li>
+    </ul>
+
+    <div class="message"></div>
+  </div>
+
+  <h2>🎉 Félicitations vous avez fini l'échauffement ! 🎉</h2>
+
+  <p>Maintenant on va passer aux exercices finaux, ceux qui vont vous faire réfléchir 🤯.</p>
+
+  <p>L'objectif est de vous entraîner à exploiter les différentes méthodes vues jusqu'à présent pour résoudre les énoncés. Quelques conseils supplémentaires :</p>
+
+  <ul>
+    <li>Faites les exercices dans l'ordre, leur difficulté est croissante.</li>
+
+    <li>N'affichez pas les indices avant d'avoir planché sur l'exercice pendant 30 min au moins.</li>
+
+    <li>Vous pouvez/devrez utiliser tout ce qu'on a vu jusqu'à présent : variables, boucles, conditions, etc. et bien sûr les méthodes disponibles <strong style="color: var(--jaune);">sur les Strings, les Arrays, les Numbers et sur les Objects bien sûr !</strong></li>
+
+    <li>Il faudra parfois utiliser plusieurs méthodes ensemble pour répondre à l'énoncé.</li>
+
+    <li>Prenez votre temps, il vaut mieux réussir un exercice en ayant passé 1h dessus que d'afficher l'indice trop vite ou de regarder la solution.</li>
+  </ul>
+
+  <p>Bon courage !</p>
+
+  <h2>Exercices finaux</h2>
+
+  <div class="enonce" id="enonce-4">
+    <h2>Exercice 0 - Inversement clé / valeur</h2>
+
+    <p>
+      Créez une fonction <code>inverser(objet)</code> qui renvoie un objet identique à <code>objet</code> mais dont les clés et valeurs ont été inversées.
+    </p>
+
+    <p>Exemple :</p>
+    <ul>
+      <li><code>inverser({prenom: "Tom", nom: "Redocemia"})</code> renverra <code>{Tom: "prenom", Redocemia: "nom"}</code>.</li>
+    </ul>
+
+    <details>
+      <summary>Indice</summary>
+      <p>Vous pouvez utiliser les 2 méthodes <code>Object.keys()</code> et <code>Object.values()</code> puis boucler sur leurs valeurs pour construire un nouvel objet. Vous pouvez également utiliser uniquement la méthode <code>Object.entries()</code> et boucler sur les valeurs du tableau renvoyé pour construire le nouvel objet.</p>
+    </details>
+
+    <div class="message"></div>
+  </div>
+
+  <div class="enonce" id="enonce-5">
+    <h2>Exercice 1 - Résumé</h2>
+
+    <p>
+      Créez une fonction <code>resume(objet)</code> qui renvoie un objet avec 2 propriétés <code>cles</code> et <code>valeurs</code> contenant chacune dans un taleau la liste des propriétés (clés) et la liste des valeurs de <code>objet</code>.
+    </p>
+
+    <p>Exemple :</p>
+    <ul>
+      <li><code>resume({prenom: "Tom", nom: "Redocemia"})</code> renverra <code>{cles: ["prenom", "nom"], valeurs: ["Tom", "Redocemia"]}</code>.</li>
+    </ul>
+
+    <details>
+      <summary>Indice</summary>
+      <p>Le plus rapide est d'utiliser les méthodes <code>Object.keys()</code> et <code>Object.values()</code> pour construire facilement le nouvel objet à retourner.</p>
+    </details>
+
+    <div class="message"></div>
+  </div>
+
+  <footer>
+    Exercices de la formation <a href="https://www.javascriptdezero.com">JavaScript de Zéro</a> par
+    <a href="https://twitter.com/JeremyMouzin">Jérémy Mouzin</a>
+  </footer>
+
+  <script src="../commun/mes-outils.js"></script>
+  <script src="../commun/init.js"></script>
+  <script src="exercices.js"></script>
+  <script src="validateur/tests.js"></script>
+</body>
+
+</html>
