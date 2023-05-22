@@ -1,0 +1,1 @@
+Le typeof null est un objet, et ne sera pas remplacé par un autre type, pour éviter les problèmes de rétro-combatibilité 
