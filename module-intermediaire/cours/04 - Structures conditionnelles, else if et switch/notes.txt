@@ -1,0 +1,3 @@
+Le switch peut se faire en cascade, en retirant les break
+
+Toujours penser à terminer par un break
