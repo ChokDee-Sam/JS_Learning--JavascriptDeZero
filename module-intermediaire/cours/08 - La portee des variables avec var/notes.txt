@@ -1,0 +1,3 @@
+Var = Hoisting ("remontage" de variable)
+Contrairement au bloc scope de Let et Const, Var a une Scope étendue + une fonction scope
+Ce qui peut engendrer beaucoup trop d'erreurs et de confusions
