@@ -1,0 +1,2 @@
+La portée de Let et Const est plus "logique"
+De ce fait, ça permet d'éviter certaines erreurs de portée trop étendue

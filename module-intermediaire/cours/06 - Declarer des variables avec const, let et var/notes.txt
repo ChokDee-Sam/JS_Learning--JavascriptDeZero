@@ -1,0 +1,3 @@
+Privilégier Const
+Si besoin de modification, modifier le Const en Let
+Éviter le Var
