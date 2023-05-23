@@ -1,0 +1,3 @@
+Éviter au possible les ternaires dans des ternaires
+
+Le but est de gagner en lisibilité et en simplicité
