@@ -1,0 +1,5 @@
+principe d'encapsulation
+
+L'encapsulation en programmation objet permet, sur un objet, d'exposer au client de cet objet uniquement des méthodes / fonctions dites publiques et de cacher / masquer (rendre privé) toutes les fonctions utiles à l'objet et à son comportement, autrement dit, l'implémentation réelle sera interne à l'objet : l'accès et l'état des propriétés de cet objet ne seront accessibles que par le biais de ces fonctions publiques, cela protège et simplifie le comportement de cet objet.
+
+https://dev.to/zorky/poo-et-encapsulation-js-42n1
