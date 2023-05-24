@@ -1,0 +1,3 @@
+Astuce : 
+Créer un lien vers un fichier CSS ou JS, puis "control + clic" pour aller dans le fichier
+Si fichier inexistant, VSCode propose de le créer en 1 clic et d'aller directement à l'intérieur
