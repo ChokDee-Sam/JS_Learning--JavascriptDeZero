@@ -69,6 +69,7 @@ function avancerDe20Minutes(horaire) {
 
 // Exercice 3 — Refactoring
 function validerRdv(rdv, finJournee) {
+  
   // ETAPE 1 : Calcul de la fin du RDV
   let finRdvHeures = rdv.heures;
   let finRdvMinutes = rdv.minutes + rdv.duree;

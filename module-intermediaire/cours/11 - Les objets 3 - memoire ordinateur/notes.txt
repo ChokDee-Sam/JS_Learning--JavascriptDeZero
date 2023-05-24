@@ -1,0 +1,9 @@
+Possibilité de modifier un objet dans une Const
+    car une Const empêche uniquement une ré-affectation
+
+Appel de fonction avec en argument un nom de variable Const déja existant
+    création d'une nouvelle variable temporaire dans le scope de la fonction
+        (modification d'une variable qui se trouve en dehors de la portée de la fonction = effet de bord)
+
+Il existe une façon de programmer dite "fonctionnelle", 
+    qui tend vers la suppression de tous ces effets de bord lors d'utilisation de fonction
