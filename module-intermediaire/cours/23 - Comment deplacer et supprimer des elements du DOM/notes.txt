@@ -1,0 +1,43 @@
+00:55 Suppression par affectation de contenu vide (innerHTML / outerHTML)
+    // liste.innerHTML = ""; // On supprime tous les enfants
+    // liste.outerHTML = ""; // On supprimer tout !
+
+
+01:46 Anciennes méthodes de suppression (beaucoup de références)
+    const anciennesMethodes = liste.querySelector('li:nth-of-type(2) ul');
+    const removeChildItem = anciennesMethodes.querySelector('li:nth-of-type(1)');
+    anciennesMethodes.removeChild(removeChildItem);
+
+
+03:00 Remplacement d'un noeud (beaucoup de références)
+    const nouvelItem = document.createElement('li');
+    nouvelItem.textContent = "Je remplace le noeud removeChild()";
+    anciennesMethodes.replaceChild(nouvelItem, removeChildItem);
+
+
+04:14 Nouvelles méthodes de suppression
+    const removeItem = liste.querySelector('li:nth-of-type(3) ul li:nth-of-type(1)');
+    removeItem.remove();
+
+
+04:55 Remplacement d'un noeud (nouvelle méthode)
+    const nouvelItem = document.createElement('li');
+    nouvelItem.textContent = "Je remplace le noeud remove()";
+    removeItem.replaceWith(nouvelItem);
+
+
+05:25 Comment déplacer un élément du DOM ?
+    const anciennesMethodes = liste.querySelector('li:nth-of-type(2)');
+    liste.prepend(anciennesMethodes);
+
+ou tout autre méthode d'ajouter ou d'insérer des noeuds sont exploitables pour déplacer des noeuds
+            liste.insertAdjacentElement('beforeend', anciennesMethodes);
+
+
+07:12 Comment déplacer la copie d'un noeud ?
+    const copie = anciennesMethodes.cloneNode(true);    // copie le noeud avec les enfants
+    liste.append(copie);                                // placement
+
+
+07:50 Quel intérêt ?
+    Utile pour venir apporter du dynamisme à nos données et des fonctionnalités à nos site web
