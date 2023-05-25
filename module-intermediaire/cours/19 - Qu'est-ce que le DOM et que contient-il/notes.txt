@@ -1,0 +1,13 @@
+Le DOM  = API
+il est généré par le navigateur web
+
+Les interfaces du Dom peuvent être "traduits" en plusieurs langages
+
+Dans la Doc du MDN : 
+Une "interface" du DOM traduite en JS = un "Objet" JS
+
+Pour connaitre l'interface DOM d'un élément HTML ou autre
+    Aller dans la doc de l'élément > résumé technique (technical summary)
+
+Lien utile pour rechercher directement un élément dans notre barre de recherche
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ecrireIciNotreRecherche

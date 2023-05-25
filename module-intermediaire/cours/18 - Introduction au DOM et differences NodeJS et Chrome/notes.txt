@@ -1,0 +1,3 @@
+Node.js permet d'accéder uniquement au JS, et pas du tout au DOM
+
+Chrome génère le DOM, et nous permet donc d'y accéder
