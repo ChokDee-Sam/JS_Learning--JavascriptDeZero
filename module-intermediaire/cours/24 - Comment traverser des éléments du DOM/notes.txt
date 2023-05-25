@@ -1,0 +1,84 @@
+/* Récupération de la liste (anciennes propriétés) */
+    const liste = document.querySelector('#liste-anciennes-proprietes');
+
+ANCIENNES PROPRIÉTËS = BAS NIVEAU = TEXTE BRUT = GALERE CAR DEPEND DE LA STRUCTURE HTML (retour à la ligne, etc etc, galère pour sélectionner correctement)
+
+01:29 Anciennes propriétés : sélection des nœuds enfants
+(affiche le texte des retours à la ligne en tant que noeud...)
+    //contient tous les noeuds enfants de l'élément
+        const enfants = liste.childNodes;   
+        console.log("Enfants de la liste :", enfants);
+
+04:11 Anciennes propriétés : sélection du 1er nœud enfant
+(affiche le texte des retours à la ligne en tant que noeud...)
+        const premierEnfant = liste.firstChild;
+        console.dir(premierEnfant);
+
+
+05:35 Anciennes propriétés : sélection du dernier nœud enfant
+(affiche le texte des retours à la ligne en tant que noeud...)
+        const dernierEnfant = liste.lastChild;
+
+
+06:42 Anciennes propriétés : sélection du nœud frère précédent
+    const enfant3 = liste.querySelector('li:nth-of-type(3)');
+    enfant3.classList.add('selection');
+    const noeudPrecedent = enfant3.previousSibling;
+
+
+07:40 On peut chaîner les propriétés
+/* On peut chaîner les propriétés */
+    noeudPrecedent.previousSibling.classList.add('entourer');
+
+
+10:00 Anciennes propriétés : sélection du nœud frère suivant
+    const noeudSuivant = enfant3.nextSibling;
+
+
+10:28 Anciennes propriétés : sélection du nœud parent
+const noeudParent = enfant3.parentNode;
+
+
+
+NOUVELLES PROPRIÉTÉS = BIEN PLUS PRATIQUE !
+
+
+/* Récupération de la liste (nouvelles propriétés) */
+// const liste = document.querySelector('#liste-nouvelles-proprietes');
+
+
+10:50 Nouvelles propriétés : sélection des éléments enfants
+// const enfants = liste.children;
+// console.log("Enfants de la liste :", enfants);
+
+11:50 Nouvelles propriétés : sélection du 1er élément enfant
+    const premierEnfant = liste.firstElementChild;
+    premierEnfant.classList.add('entourer')
+
+
+12:40 Nouvelles propriétés : sélection du dernier élément enfant
+    const dernierEnfant = liste.lastElementChild;
+
+
+12:50 Nouvelles propriétés : sélection de l'élément frère précédent
+    const enfant3 = liste.querySelector('li:nth-of-type(3)');
+    const elementPrecedent = enfant3.previousElementSibling
+
+/* On peut chaîner les propriétés */
+    elementPrecedent.previousElementSibling.classList.add('entourer');
+
+
+13:28 Nouvelles propriétés : sélection de l'élément frère suivant
+    const elementSuivant = enfant3.nextElementSibling;
+
+
+13:40 Quelles propriétés utiliser ?
+    Les nouvelles, tant que possible !
+
+
+14:25 Un petit mot sur la documentation du MDN
+Note importante dans la documentation
+
+    Les nouvelles propriétés sont accessibles depuis le type Element mais définies dans les interfaces NonDocumentTypeChildNode, ParentNode et ChildNode.
+
+    Type Element : https://developer.mozilla.org/fr/docs/Web/API/Element
