@@ -1,0 +1,21 @@
+Raccourcis dans la console Chrome
+
+Clic sur une ligne ($0) pour éviter d'écrire la ligne sélectionnée
+    par exemple directement 
+        dir($0)
+
+Éviter d'écrire document.querySelector
+    dans la console Chrome : $
+
+Éviter d'écrire document.querySelectorAll
+    dans la console Chrome : $$
+
+tectContent = changement texte simple (et affiche le texte brut, sans CSS / JS)
+innerHtml = texte avec css / mise en forme
+
+Pour connaitre le type d'un objet crée par un objet
+    dans la console chrome 
+        .constructor.name
+Permet d'aller easy dans le MDN
+
+className est moins "propre" que classList (car celui ci est sous forme de tableau)

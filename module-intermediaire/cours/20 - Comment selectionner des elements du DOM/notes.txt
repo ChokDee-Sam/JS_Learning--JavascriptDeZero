@@ -1,0 +1,12 @@
+getElement(s) = selection par rapport aux éléments HTML
+querySelector(All) = selection par rapport aux selecteurs CSS
+
+
+Possibilité d'effectuer une selection ailleurs qu'à partir du document
+document.getElementById('deuxieme-paragraphe')
+
+On défini une variable "racine" qui est plus loins dans l'arbre document 
+variableBranche.getElementById('deuxieme-paragraphe')
+
+Ça permet d'effectuer une recherche sur les elements descendants de notre element racine
+Et gagner un peu de performance (peu de réelles performances si peu de noeuds)

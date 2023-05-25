@@ -1,0 +1,57 @@
+01:37 Création d'un élément via innerHTML à partir de code HTML
+    innerHTML crée des noeuds à la volée
+
+
+04:20 La méthode outerHTML
+    remplace l'élément complet
+
+
+05:35 Utilisation des template strings avec innerHTML et outerHTML
+    Permet d'y mettre plein de choses (classe, contenu, etc) grace à l'écriture simplifiée
+
+
+06:37 Créer des éléments avec createElement et appendChild
+    createElement()     crée un élément dans le "vide"
+    appendChild()       place l'élément 
+
+
+07:48 Méthode moderne append
+    Permet de prendre plusieurs élément afin de les placer
+        liste.append(li, li2)
+    Peut ajouter un nouvel element texte
+        liste.append("nouvel element texte")
+
+
+08:40 Cloner un élément avec cloneNode
+    const item 
+    const nouvelItem = item.cloneNode(false)
+        false permet de copier uniquement le Node, sans les enfants (Node vide)
+        true copie le Node, ainsi que les enfants
+
+
+10:00 Intérêt d'utiliser le clonage
+    Permet d'éviter des erreurs si besoin d'un ensemble d'éléments enfants
+
+
+11:31 Insérer des éléments à une position donnée avec insertAdjacentHTML
+    liste.insertAdjacentHTML('beforebegin', "<p> Hello </p>")
+        4 positions : beforebegin, afterbegin, beforeend, afterend
+
+
+13:30 insertAdjacentElement et insertAdjacentText
+    Place un element deja existant
+        liste.insertAdjacentElement('beforebegin', nomDeVariable)
+        liste.insertAdjacentText('beforebegin', 'Nouveau noeud texte')
+
+
+14:23 La vieille méthode insertBefore
+    liste.insertBefore(variableAplacer, variableDeReference)
+
+
+15:25 Les nouvelles méthodes : before, prepend, append, after
+    liste.before(variableAplacer)
+        permet de placer plusieurs variables/elements à la suite
+
+
+18:10 Quelle méthode utiliser ?
+    Ça depend de la façon dont on souhaite gérer nos éléments
