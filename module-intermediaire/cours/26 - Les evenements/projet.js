@@ -22,7 +22,7 @@ function modifierTexte() {
 
 /* addEventListener (recommandé) */
 // Documentation : EventTarget
-// bouton.addEventListener('click', modifierTexte);
+bouton.addEventListener('click', modifierTexte);
 
 /* Quelle méthode choisir ? */
 // addEventListener : plusieurs callbacks

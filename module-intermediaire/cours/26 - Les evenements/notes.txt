@@ -1,0 +1,14 @@
+onclick dans html = ancienne méthode
+
+-----------------------------------------------------
+chercher un element dans le MDN > résumé technique
+    > interface DOM > INFORMATION
+-----------------------------------------------------
+
+Propriété onclick (GlobalEventHandlers)
+button.onclick : Juste la référence de la fonction
+    buton.onclick = nomDeFonctionSansParenthese
+
+-----------------------------------------------------
+
+document.body est un raccourci

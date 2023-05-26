@@ -23,7 +23,7 @@
 
 
 08:40 Cloner un élément avec cloneNode
-    const item 
+    const item = quelque chose
     const nouvelItem = item.cloneNode(false)
         false permet de copier uniquement le Node, sans les enfants (Node vide)
         true copie le Node, ainsi que les enfants
