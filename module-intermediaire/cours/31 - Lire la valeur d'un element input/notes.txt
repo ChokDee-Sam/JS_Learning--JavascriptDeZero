@@ -1,0 +1,6 @@
+affetation par référence = pour une valeur de type non primitif (objet)
+
+affectation par valeur = pour une valeur type primitif
+
+Attention lorsqu'on affecte une donnée.value issue d'un objet,
+    car elle ne sera plus à jour (perte de référence de l'objet)

@@ -1,0 +1,2 @@
+l'incrémentation peut necessité une modification de type
+la décrémentation, dans l'exemple de l'exercice converti implicitement en nombre

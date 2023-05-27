@@ -8,7 +8,7 @@ const inputValeurDec = document.querySelector('#valeur-dec');
 /* Lire la valeur d'un élément HTML input */
 boutonMoins.addEventListener('click', function() {
   // Affecter au compteur la valeur de l'input valeur-dec
-  compteur.textContent = "?";
+  compteur.textContent = inputValeurDec.value
 });
 
 /* Une erreur très fréquente */
