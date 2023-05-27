@@ -1,0 +1,3 @@
+connaitre un event en detail ?
+    console.dir(evenement) d'une fonction > check MDN > check canIuse
+

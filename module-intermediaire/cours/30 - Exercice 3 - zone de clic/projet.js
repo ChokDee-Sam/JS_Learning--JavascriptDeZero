@@ -24,6 +24,7 @@ const boutonPlus = document.querySelector('#bouton-plus');
 const boutonMoins = document.querySelector('#bouton-moins');
 const boutonReset = document.querySelector('#bouton-reset');
 const compteur = document.querySelector('#compteur');
+const zoneDeClic = document.querySelector('#zone-de-clic')
 
 let compteurDeClics = 0;
 
@@ -46,3 +47,16 @@ boutonReset.addEventListener('click', function() {
   compteurDeClics = 0;
   compteur.textContent = compteurDeClics;
 });
+
+// Zone de clic gauche (incrémentation)
+zoneDeClic.addEventListener('click', function() {
+  compteurDeClics++;
+  compteur.textContent = compteurDeClics;
+})
+
+// zone de clic droit (décrémentation)
+zoneDeClic.addEventListener('contextmenu', function(evenement) {
+  evenement.preventDefault()
+  compteurDeClics--;
+  compteur.textContent = compteurDeClics;
+})
