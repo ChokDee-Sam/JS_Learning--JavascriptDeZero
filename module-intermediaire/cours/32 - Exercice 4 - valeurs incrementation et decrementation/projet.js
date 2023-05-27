@@ -82,3 +82,20 @@ zoneDeClic.addEventListener("contextmenu", function (evenement) {
 //   // Affecter au compteur la valeur de l'input valeur-dec
 //   compteur.textContent = inputValeurDec.value
 // });
+
+
+// Penser à éviter les répétitions ! DRY
+// Voici 2 fonctions qu'on peut placer pour éviter ça
+// Voir projet-solution-propre.js
+
+// Fonction d'incrémentation
+function incrementerCompteur() {
+  compteurDeClics += Number(inputValeurInc.value);
+  compteur.textContent = compteurDeClics;
+}
+
+// Fonction de décrémentation
+function decrementerCompteur() {
+  compteurDeClics -= inputValeurDec.value;
+  compteur.textContent = compteurDeClics;
+}
