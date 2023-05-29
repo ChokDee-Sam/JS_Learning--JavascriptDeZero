@@ -79,12 +79,18 @@ function modifierCompteur(nouvelleValeur) {
   const limiteBasse = Number(inputLimiteBasse.value);
 
   if (compteurDeClics >= limiteHaute) {
-    afficherNotification();
     compteurDeClics = limiteHaute;
+    afficherNotification(`Limite haute ${limiteHaute} atteinte`);
   }
 
   if (compteurDeClics <= limiteBasse) {
     compteurDeClics = limiteBasse;
+    afficherNotification(`Limite basse ${limiteBasse} atteinte`);
+  }
+
+  // Pour retirer l'affichage du compteur en rouge
+  if (compteurDeClics < limiteHaute && compteurDeClics > limiteBasse) {
+    compteur.classList.remove("limite-atteinte");
   }
 
   compteur.textContent = compteurDeClics;
@@ -101,18 +107,16 @@ function decrementerCompteur() {
 }
 
 // Fonction d'affichage de limite
-function afficherNotification() {
-  compteur.classList.add("limite-atteinte");
+function afficherNotification(message) {
+  notificationTexte.textContent = message;
   notification.classList.add("afficher");
-  notificationTexte.textContent = `Limite ${
-    compteurDeClics < 0 ? `basse` : `haute`
-  }(${compteurDeClics}) atteinte`;
+  compteur.classList.add("limite-atteinte");
 
-  setTimeout(function () {
-    compteur.classList.remove("limite-atteinte");
+  window.setTimeout(function () {
     notification.classList.remove("afficher");
-  }, 2000);
+  }, 3000);
 }
+
 // -------------------------------------------------------------------------
 // LES FONCTIONNALITÉS
 // -------------------------------------------------------------------------
@@ -125,8 +129,7 @@ boutonMoins.addEventListener("click", decrementerCompteur);
 
 /* Bouton reset (remise à zéro) */
 boutonReset.addEventListener("click", function () {
-  compteurDeClics = 0;
-  compteur.textContent = compteurDeClics;
+  modifierCompteur(0);
 });
 
 /* Incrémentation depuis la zone de clic */
