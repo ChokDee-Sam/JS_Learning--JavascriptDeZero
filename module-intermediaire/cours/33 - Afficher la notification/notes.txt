@@ -1,0 +1,2 @@
+setTimeOut
+    pas besoin de mettre window.setTimeOut
