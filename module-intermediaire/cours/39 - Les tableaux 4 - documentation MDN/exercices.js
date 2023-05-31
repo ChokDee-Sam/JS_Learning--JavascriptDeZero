@@ -21,6 +21,45 @@
  * Merci et bon courage ! 🤘
  */
 
+//  ---------------------------------------------------------
+//  Les Tableaux modifiés
+//  ---------------------------------------------------------
+//
+// shift() = Retirer le premier element
+// unshift() = Ajoute un ou plusieurs premiers éléments
+
+// pop() = Retire le dernier élément
+// push() = Ajoute 1 ou plusieurs éléments en fin de tableau
+
+// fill() = remplir tous les éléments d'un tableau. entre deux index avec une valeur statique.
+// array.fill(0,2,4)   => fill with 0, from 2(include) to 4(non include)
+
+// reverse() = inverse l'ordre des éléments d'un tableau
+// splice() = à partir de tel index, supprime X élément, puis ajoute tel élément,
+
+//  ---------------------------------------------------------
+//  Les Nouveaux Tableaux
+//  ---------------------------------------------------------
+
+// concat() = fusionner deux ou plusieurs tableaux en les concaténant (new)
+
+//  ---------------------------------------------------------
+//  Les Tableaux inchangés (une valeur de return)
+//  ---------------------------------------------------------
+
+// indexOf() = Renvoie l'index de notre recherche, en partant du début du tableau
+            //array.indexOf('bison', 2)   => recherche l'index bison, à partir de 2eme index
+// lastIndexOf = Renvoie l'index de notre recherche, en partant de la fin du tableau
+
+// slice() = Découpe un tableau
+// array.slice(2, 4)    => cut from 2(include) to 4(non include)
+
+// includes() = Renvoie true ou false, selon si une valeur est contenue
+// join() = Concatene une nouvelle chaîne avec tous les éléments + ce qui les lie
+
+//  ---------------------------------------------------------
+//  ---------------------------------------------------------
+
 // Exercice 0
 // Créez la fonction concat0(tableau1, tableau2) ci-dessous.
 
