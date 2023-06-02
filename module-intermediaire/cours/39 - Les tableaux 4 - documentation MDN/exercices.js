@@ -315,9 +315,20 @@ function remplissage(mot, taille) {
 
 // Exercice 2 — Extraction
 // Créez la fonction extraction(transmission, sequence) ci-dessous.
+function extraction(transmission, sequence) {
+  const debutSequence = transmission.indexOf(sequence); //2
+  const finSequence = transmission.lastIndexOf(sequence); //7
+
+  return transmission.slice(debutSequence+1, finSequence);
+}
 
 // Exercice 3 — Camouflage
 // Créez la fonction camouflage(transmission, sequence) ci-dessous.
+function camouflage(transmission, sequence) {
+  const debutSequence = transmission.indexOf(sequence); //2
+  const finSequence = transmission.lastIndexOf(sequence); //7
+
+  return transmission.fill("#",debutSequence+1, finSequence);}
 
 // Exercice 4 — Suppression
 // Créez la fonction suppression(transmission, sequence) ci-dessous.
