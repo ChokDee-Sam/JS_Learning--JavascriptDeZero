@@ -319,7 +319,7 @@ function extraction(transmission, sequence) {
   const debutSequence = transmission.indexOf(sequence); //2
   const finSequence = transmission.lastIndexOf(sequence); //7
 
-  return transmission.slice(debutSequence+1, finSequence);
+  return transmission.slice(debutSequence + 1, finSequence);
 }
 
 // Exercice 3 — Camouflage
@@ -328,13 +328,47 @@ function camouflage(transmission, sequence) {
   const debutSequence = transmission.indexOf(sequence); //2
   const finSequence = transmission.lastIndexOf(sequence); //7
 
-  return transmission.fill("#",debutSequence+1, finSequence);}
+  return transmission.fill("#", debutSequence + 1, finSequence);
+}
 
 // Exercice 4 — Suppression
 // Créez la fonction suppression(transmission, sequence) ci-dessous.
+function suppression(transmission, sequence) {
+  const debutSequence = transmission.indexOf(sequence) + 1; //3
+  const finSequence = transmission.lastIndexOf(sequence); //7
+  const debut = transmission.slice(0, debutSequence);
+  const fin = transmission.slice(finSequence, transmission.length);
+  return debut.concat(fin);
+}
+
+// Correction du formateur
+// function suppression(transmission, sequence) {
+//   // indexDebut correspond à la première lettre du code secret
+//   // (d'où le + 1) !
+//   const indexDebut = transmission.indexOf(sequence) + 1;
+//   // indexFin correspond à l'index de sequence de fin du code
+//   const indexFin = transmission.lastIndexOf(sequence);
+
+//   // On calcule la longueur du code secret à supprimer
+//   const longueurASupprimer = indexFin - indexDebut;
+//   // On supprime dès la 1ère lettre du code secret
+//   transmission.splice(indexDebut, longueurASupprimer);
+
+//   return transmission;
+// }
 
 // Exercice 5 — Entrelacement
 // Créez la fonction entrelacement(tableau1, tableau2) ci-dessous.
+// function entrelacement(tableau1, tableau2) {
+function entrelacement(tableau1, tableau2) {
+  let tableauMix = [];
+  for (let i = 0; i < tableau1.length; i++) {
+    tableauMix.push(tableau1[i], tableau2[i]);
+  }
+  return tableauMix;
+}
+
+// }
 
 // Exercice 6 — Duplication
 // Créez la fonction duplication(quantites, valeurs) ci-dessous.
