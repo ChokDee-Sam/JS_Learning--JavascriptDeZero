@@ -299,6 +299,9 @@ function unshift1(tableau, valeur1, valeur2) {
 
 // Exercice 0 — Demi-tour
 // Créez la fonction demitour(tableau1, tableau2) ci-dessous.
+function demitour(tableau1, tableau2){
+    return tableau1.concat(tableau2).reverse()
+}
 
 // Exercice 1 — Remplissage
 // Créez la fonction remplissage(mot, taille) ci-dessous.
