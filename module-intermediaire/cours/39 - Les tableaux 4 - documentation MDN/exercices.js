@@ -391,21 +391,18 @@ function duplication(quantites, valeurs) {
 // Exercice 7 — Sélection
 // Créez la fonction selection(selecteur, liste) ci-dessous.
 function selection(selecteur, liste) {
-  debugger;
   let resultat = [];
-  let resultatTemporaire;
+  // let resultatTemporaire;
 
   for (let i = 0; i < selecteur.length; i++) {
-
     if (liste.includes(selecteur[i])) {
       // resultatTemporaire = liste.shift();
       // resultat.push(resultatTemporaire);
-      resultat.push(liste.shift())
+      resultat.push(liste.shift());
     } else {
       // resultatTemporaire = liste.pop();
       // resultat.push(resultatTemporaire);
-      resultat.push(liste.pop())
-
+      resultat.push(liste.pop());
     }
   }
 
@@ -414,6 +411,90 @@ function selection(selecteur, liste) {
 
 // Exercice 8 — Extraction multiple
 // Créez la fonction extractionMultiple(transmission, sequence) ci-dessous.
+// function extractionMultiple(transmission, sequence) {
+//   debugger;
+
+//   let tableau = [];
+//   let stop = true;
+
+//   for (let i = 0; i < transmission.length; i++) {
+//     // if (transmission[i] === sequence) {
+//     //   stop = false;
+//       while (transmission[i] === !sequence) {
+//         tableau.push = transmission[i];
+//       }
+//     // }
+//   }
+
+//   return tableau;
+// }
+
+
+
+function extractionMultiple(transmission, sequence) {
+
+  let resultat = [];
+
+  // On cherche le 1er caractère de sequence
+  let indexDebut = transmission.indexOf(sequence);
+
+  // Tant qu'il en existe un, on extrait le code secret
+  while (indexDebut !== -1) {
+
+    // On cherche le caractère sequence de fin de ce code secret.
+    // Pour ça, on utilise indexOf() à partir du caractère juste
+    // après le 1er caractère de sequence soit (indexDebut + 1)
+    const indexFin = transmission.indexOf(sequence, indexDebut + 1);
+
+    // On récupère le code secret grâce à slice() qu'on cumule
+    // au resultat grâce à concat()
+    resultat = resultat.concat(transmission.slice(indexDebut + 1, indexFin));
+
+    // On cherche le prochain caractère de début de sequence de
+    // code secret en partant cette fois-ci de juste après le
+    // caractère sequence de fin du code qu'on vient de lire,
+    // soit à partir de (indexFin + 1)
+    indexDebut = transmission.indexOf(sequence, indexFin + 1);
+  }
+  return resultat;
+}
 
 // Exercice 9 — Extraction multiple incomplète
 // Créez la fonction extractionMultiple(transmission, sequence) ci-dessous.
+function extractionMultipleIncomplete(transmission, sequence) {
+
+  let resultat = [];
+
+  // On cherche le 1er caractère de sequence
+  let indexDebut = transmission.indexOf(sequence);
+
+  // Tant qu'il en existe un, on extrait le code secret
+  while (indexDebut !== -1) {
+
+    // On cherche le caractère sequence de fin de ce code secret.
+    // Pour ça, on utilise indexOf() à partir du caractère juste
+    // après le 1er caractère de sequence soit (indexDebut + 1)
+    const indexFin = transmission.indexOf(sequence, indexDebut + 1);
+
+    // S'il n'y a pas de caractère sequence de fin, on lit
+    // jusqu'au bout du fichier et on arrête de chercher
+    if (indexFin === -1) {
+      resultat = resultat.concat(transmission.slice(indexDebut + 1));
+      // On arrête de chercher, cette ligne permet de sortir
+      // de la boucle du while()
+      indexDebut = -1;
+
+    } else {
+      // On récupère le code secret grâce à slice() qu'on cumule
+      // au resultat grâce à concat()
+      resultat = resultat.concat(transmission.slice(indexDebut + 1, indexFin));
+      
+      // On cherche le prochain caractère de début de sequence de
+      // code secret en partant cette fois-ci de juste après le
+      // caractère sequence de fin du code qu'on vient de lire,
+      // soit à partir de (indexFin + 1)
+      indexDebut = transmission.indexOf(sequence, indexFin + 1);
+    }
+  }
+  return resultat;
+}
