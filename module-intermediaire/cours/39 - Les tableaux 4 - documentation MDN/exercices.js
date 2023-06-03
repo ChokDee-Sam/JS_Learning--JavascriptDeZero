@@ -368,13 +368,49 @@ function entrelacement(tableau1, tableau2) {
   return tableauMix;
 }
 
-// }
-
 // Exercice 6 — Duplication
 // Créez la fonction duplication(quantites, valeurs) ci-dessous.
 
+function duplication(quantites, valeurs) {
+  const resultat = [];
+
+  // Pour chaque quantité du tableau quantites...
+  for (let i = 0; i < quantites.length; i++) {
+    const quantite = quantites[i];
+    const valeur = valeurs[i];
+
+    // On boucle plusieurs fois pour faire les copies (duplication)
+    for (let copies = 0; copies < quantite; copies++) {
+      resultat.push(valeur);
+    }
+  }
+
+  return resultat;
+}
+
 // Exercice 7 — Sélection
 // Créez la fonction selection(selecteur, liste) ci-dessous.
+function selection(selecteur, liste) {
+  debugger;
+  let resultat = [];
+  let resultatTemporaire;
+
+  for (let i = 0; i < selecteur.length; i++) {
+
+    if (liste.includes(selecteur[i])) {
+      // resultatTemporaire = liste.shift();
+      // resultat.push(resultatTemporaire);
+      resultat.push(liste.shift())
+    } else {
+      // resultatTemporaire = liste.pop();
+      // resultat.push(resultatTemporaire);
+      resultat.push(liste.pop())
+
+    }
+  }
+
+  return resultat;
+}
 
 // Exercice 8 — Extraction multiple
 // Créez la fonction extractionMultiple(transmission, sequence) ci-dessous.
