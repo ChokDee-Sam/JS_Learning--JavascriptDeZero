@@ -169,48 +169,80 @@ function padEnd1(chaine, longueur) {
 // Exercice 18
 // Créez la fonction padStart0(chaine, longueur) ci-dessous.
 function padStart0(chaine, longueur) {
-    return chaine.padStart(longueur, '#')
+  return chaine.padStart(longueur, "#");
 }
 
 // Exercice 19
 // Créez la fonction padStart1(chaine, longueur) ci-dessous.
 function padStart1(chaine, longueur) {
-    return chaine.padStart(longueur, 'OUI')
+  return chaine.padStart(longueur, "OUI");
 }
 
 // Exercice 20
 // Créez la fonction repeat0(caractere, longueur) ci-dessous.
-
+function repeat0(caractere, longueur) {
+  return caractere.repeat(longueur);
+}
 
 // Exercice 21
 // Créez la fonction repeat1(chaine, repetitions) ci-dessous.
+function repeat1(chaine, repetitions) {
+  return chaine.repeat(repetitions);
+}
 
 // Exercice 22
 // Créez la fonction replace0(chaine, motif, remplacement) ci-dessous.
+function replace0(chaine, motif, remplacement) {
+  return chaine.replace(motif, remplacement);
+}
 
 // Exercice 23
 // Créez la fonction replaceAll0(chaine, motif, remplacement) ci-dessous.
+function replaceAll0(chaine, motif, remplacement) {
+  return chaine.replaceAll(motif, remplacement);
+}
 
 // Exercice 24
 // Créez la fonction slice0(chaine, debut) ci-dessous.
+function slice0(chaine, debut) {
+  return chaine.slice(debut);
+}
 
 // Exercice 25
 // Créez la fonction slice1(chaine, debut, fin) ci-dessous.
+function slice1(chaine, debut, fin) {
+  return chaine.slice(debut, fin);
+}
 
 // Exercice 26
 // Créez la fonction slice2(chaine, nombre) ci-dessous.
+function slice2(chaine, nombre) {
+  return chaine.slice(chaine.length - nombre);
+}
 
 // Exercice 27
 // Créez la fonction slice3(chaine) ci-dessous.
+function slice3(chaine) {
+  return chaine.slice(3, -3);
+}
 
 // Exercice 28
 // Créez la fonction slice4(chaine, debut) ci-dessous.
+function slice4(chaine, debut) {
+  return chaine.slice(debut, -1);
+}
 
 // Exercice 29
 // Créez la fonction slice5(chaine) ci-dessous.
+function slice5(chaine) {
+  return chaine.slice(-5, -2);
+}
 
 // Exercice 30
 // Créez la fonction split0(chaine) ci-dessous.
+function split0(chaine) {
+  return chaine.split("");
+}
 
 // Exercice 31
 // Créez la fonction split1(chaine) ci-dessous.
