@@ -21,6 +21,44 @@
  * Merci et bon courage ! 🤘
  */
 
+// concat()     =>  return une concatènation
+// toLowerCase()=>  return des minuscules
+// toUpperCase()=>  return des majuscules
+
+// trim()       =>  retire les blancs en début et fin de chaine de car
+// trimStart()  =>  retire les blancs en début de chaine de car
+// trimEnd()    =>  retire les blanc en fin de chaine de car
+
+// replace()    =>  remplace UNE chaine de caractère par une autre
+// replaceAll() =>  remplace TOUTES les chaines de caractère par une autre
+
+// indexOf      =>  return l'index en parant du début
+// lastIndexOf  =>  return l'index en partant de la fin
+// charAt()     =>  return le caractère à la position indiquée
+
+// includes()   =>  return true / false
+// startsWith() =>  return true / false
+// endsWith()   =>  return true / false
+
+// padStart()   =>  compléter la chaîne courante avec une chaîne de caractères
+//                  jusqu'à l'index défini (en début de chaine courante).
+// padEnd()     =>  compléter la chaîne courante avec une chaîne de caractères 
+//                  jusqu'à l'index défini (en fin de chaine courante).
+
+// repeat()     =>  repète (x) fois
+
+// slice()      =>  découpe 
+// split()      =>  divise une chaîne de caractères en une liste ordonnée de sous-chaînes, place ces sous-chaînes dans un tableau et retourne le tableau.
+                //  str.split('')   =>  divise à chaque chaines de car
+                //  str.split(' ')  =>  divise à chaque espace  
+
+// localeCompare()    =>    Compare selon l'ordre lexicographique
+//      nombre negatif si chaine de car située avant la chaine à comparer
+//      nombre positif si chaine de car située après la chaine à comparer
+//      0   si les deux chaines sont équivalentes
+
+
+
 // Exercice 0
 // Créez la fonction charAt0(chaine, index) ci-dessous.
 
