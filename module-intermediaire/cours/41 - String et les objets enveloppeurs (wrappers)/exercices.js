@@ -246,33 +246,63 @@ function split0(chaine) {
 
 // Exercice 31
 // Créez la fonction split1(chaine) ci-dessous.
+function split1(chaine) {
+  return chaine.split(" ");
+}
 
 // Exercice 32
 // Créez la fonction split2(chaine, max) ci-dessous.
+function split2(chaine, max) {
+  return chaine.split(" ", max);
+}
 
 // Exercice 33
 // Créez la fonction split3(csv, separateur) ci-dessous.
+function split3(csv, separateur) {
+  return csv.split(separateur);
+}
 
 // Exercice 34
 // Créez la fonction startsWith0(chaine, motif) ci-dessous.
+function startsWith0(chaine, motif) {
+  return chaine.startsWith(motif);
+}
 
 // Exercice 35
 // Créez la fonction startsWith1(chaine, motif) ci-dessous.
+function startsWith1(chaine, motif) {
+  return chaine.startsWith(motif, 4);
+}
 
 // Exercice 36
 // Créez la fonction toLowerCase0(chaine) ci-dessous.
+function toLowerCase0(chaine) {
+  return chaine.toLowerCase();
+}
 
 // Exercice 37
 // Créez la fonction toUpperCase0(chaine) ci-dessous.
+function toUpperCase0(chaine) {
+  return chaine.toUpperCase();
+}
 
 // Exercice 38
 // Créez la fonction trim0(chaine) ci-dessous.
+function trim0(chaine) {
+  return chaine.trim();
+}
 
 // Exercice 39
 // Créez la fonction trimStart0(chaine) ci-dessous.
+function trimStart0(chaine) {
+  return chaine.trimStart();
+}
 
 // Exercice 40
 // Créez la fonction trimEnd0(chaine) ci-dessous.
+function trimEnd0(chaine) {
+  return chaine.trimEnd();
+}
 
 /********************/
 /* Exercices finaux */
@@ -280,6 +310,12 @@ function split0(chaine) {
 
 // Exercice 0 — Vérification de jauge
 // Créez la fonction verifierJauge(valeur) ci-dessous.
+function verifierJauge(valeur) {
+  debugger;
+  let valeurIndex = valeur.lastIndexOf("#")+1;
+  let middleLongueur = valeur.length / 2;
+  return valeurIndex >= middleLongueur;
+}
 
 // Exercice 1 — Création de jauge
 // Créez la fonction creerJauge(pourcentage) ci-dessous.
