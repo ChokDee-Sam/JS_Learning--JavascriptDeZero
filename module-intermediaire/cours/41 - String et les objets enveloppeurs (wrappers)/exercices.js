@@ -312,19 +312,49 @@ function trimEnd0(chaine) {
 // Créez la fonction verifierJauge(valeur) ci-dessous.
 function verifierJauge(valeur) {
   debugger;
-  let valeurIndex = valeur.lastIndexOf("#")+1;
+  let valeurIndex = valeur.lastIndexOf("#") + 1;
   let middleLongueur = valeur.length / 2;
   return valeurIndex >= middleLongueur;
 }
 
 // Exercice 1 — Création de jauge
 // Créez la fonction creerJauge(pourcentage) ci-dessous.
+function creerJauge(pourcentage) {
+  let nombre = pourcentage / 10;
+  let symbole = "#";
+  let result = symbole.repeat(nombre).padEnd(10, " ");
+  return result;
+}
 
 // Exercice 2 — Compteur de voyelles
 // Créez la fonction compteurVoyelles(phrase) ci-dessous.
+function compteurVoyelles(phrase) {
+  const voyelles = "aeiouy";
+  let compteur = 0;
+
+  for (let i = 0; i < phrase.length; i++) {
+    if (voyelles.includes(phrase[i])) {
+      compteur++;
+    }
+  }
+
+  return compteur;
+}
 
 // Exercice 3 — Compteur de consonnes
 // Créez la fonction compteurConsonnes(phrase) ci-dessous.
+function compteurConsonnes(phrase) {
+  const voyelles = "bcdfghjklmnpqrstvwxz";
+  let compteur = 0;
+
+  for (let i = 0; i < phrase.length; i++) {
+    if (voyelles.includes(phrase[i])) {
+      compteur++;
+    }
+  }
+
+  return compteur;
+}
 
 // Exercice 4 — Kebab case
 // Créez la fonction kebabCase(chaine) ci-dessous.
