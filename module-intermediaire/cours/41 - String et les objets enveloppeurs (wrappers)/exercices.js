@@ -311,7 +311,6 @@ function trimEnd0(chaine) {
 // Exercice 0 — Vérification de jauge
 // Créez la fonction verifierJauge(valeur) ci-dessous.
 function verifierJauge(valeur) {
-  debugger;
   let valeurIndex = valeur.lastIndexOf("#") + 1;
   let middleLongueur = valeur.length / 2;
   return valeurIndex >= middleLongueur;
@@ -324,9 +323,7 @@ function creerJauge(pourcentage) {
   let symbole = "#";
   let result = symbole.repeat(nombre).padEnd(10, " ");
   return result;
-}
-
-// Exercice 2 — Compteur de voyelles
+} // Exercice 2 — Compteur de voyelles
 // Créez la fonction compteurVoyelles(phrase) ci-dessous.
 function compteurVoyelles(phrase) {
   const voyelles = "aeiouy";
@@ -358,12 +355,78 @@ function compteurConsonnes(phrase) {
 
 // Exercice 4 — Kebab case
 // Créez la fonction kebabCase(chaine) ci-dessous.
+function kebabCase(chaine) {
+  // return chaine.split(' ').join('-').toLowerCase()
+  return chaine.toLowerCase().replaceAll(" ", "-");
+}
 
 // Exercice 5 — Camel case
 // Créez la fonction camelCase(chaine) ci-dessous.
+function camelCase(chaine) {
+  // On met la chaine en minuscules...
+  let chaineMinuscules = chaine.toLowerCase();
+  // On scinde la chaîne en mots qu'on stocke dans un tableau
+  let mots = chaineMinuscules.split(" ");
+  // On initialise le résultat avec le premier mot en minuscules
+  let resultat = mots[0];
+
+  // Pour chaque mot sauf le 1er...
+  for (let i = 1; i < mots.length; i++) {
+    let mot = mots[i];
+
+    // On met la 1ere lettre en majuscule
+    let premiereLettreEnMaj = mot[0].toUpperCase();
+
+    // On découpe le reste du mot sans la 1ere lettre
+    let resteDuMot = mot.slice(1);
+
+    // On concatène le tout pour reformer le mot avec la majuscule
+    let motAvecPremiereLettreEnMaj = premiereLettreEnMaj.concat(resteDuMot);
+    resultat = resultat.concat(motAvecPremiereLettreEnMaj);
+  }
+  return resultat;
+}
 
 // Exercice 6 — Tri de mots
 // Créez la fonction triDeMots(liste) ci-dessous.
+
+function triDeMots(liste) {
+  // Pour cet exercice j'ai fait le choix d'utiliser [i]
+  // à la place de charAt(i), les 2 sont identiques, [i]
+  // est plus compact et souvent beaucoup plus utilisé !
+
+  let voyelles = "aeiouy";
+  let resultat = "";
+
+  // On récupère la liste des mots dans un tableau
+  let listeDeMots = liste.split(",");
+
+  // Pour chaque mot...
+  for (let i = 0; i < listeDeMots.length; i++) {
+    let mot = listeDeMots[i];
+
+    // On regarde si la 1ère lettre et la derniere
+    // sont des voyelles
+    let premiereLettre = mot[0];
+    let derniereLettre = mot.slice(-1);
+    if (
+      voyelles.includes(premiereLettre) &&
+      voyelles.includes(derniereLettre)
+    ) {
+      // Si oui, on ajoute ce mot à la liste finale avec une virgule
+      resultat = resultat.concat(mot, ",");
+    }
+  }
+  
+  // On retire la dernière virgule en trop
+  resultat = resultat.slice(0, -1);
+  return resultat;
+
+  // Plutôt que d'utiliser une chaîne de caractères on peut
+  // aussi utiliser un tableau et join pour générer la chaîne
+  // de caractères finale, c'est ce qu'on fera dans l'exercice
+  // suivant
+}
 
 // Exercice 7 — Légumes
 // Créez la fonction legumes(liste) ci-dessous.
