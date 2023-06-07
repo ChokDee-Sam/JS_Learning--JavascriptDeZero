@@ -32,7 +32,7 @@
 // replace()    =>  remplace UNE chaine de caractère par une autre
 // replaceAll() =>  remplace TOUTES les chaines de caractère par une autre
 
-// indexOf      =>  return l'index en parant du début
+// indexOf      =>  return l'index en partant du début
 
 // lastIndexOf  =>  return l'index en partant de la fin
 // charAt()     =>  return le caractère à la position indiquée
@@ -417,7 +417,7 @@ function triDeMots(liste) {
       resultat = resultat.concat(mot, ",");
     }
   }
-  
+
   // On retire la dernière virgule en trop
   resultat = resultat.slice(0, -1);
   return resultat;
@@ -430,12 +430,81 @@ function triDeMots(liste) {
 
 // Exercice 7 — Légumes
 // Créez la fonction legumes(liste) ci-dessous.
+function legumes(liste) {
+  // lister les legumes
+  let legumes = "carotte,haricot,chou,aubergine";
+
+  // transformer chaque element de liste string en tableau
+  let listing = liste.split(",");
+
+  // preparer un resultat vide
+  let resultat = [];
+
+  // checker chaque element de la liste s'il a des legumes
+  //    si oui, on envoie l'élement dans le resultat
+
+  for (let i = 0; i < listing.length; i++) {
+    const element = listing[i];
+    if (legumes.includes(element)) resultat.push(element);
+  }
+
+  return resultat.join(",");
+}
 
 // Exercice 8 — Décodeur
 // Créez la fonction decodeur(secret) ci-dessous.
+function decodeur(secret) {
+  // determiner les emplacements des doubles #
+  let sequenceDebut = secret.indexOf("##") + 2;
+  let sequenceFin = secret.lastIndexOf("##");
+
+  // decouper entre les doubles #
+  let sequence = secret.slice(sequenceDebut, sequenceFin);
+
+  // replacer les numeros par des lettres, et les - par des espaces
+  let chiffres = "134580-";
+  let lettres = "ieasbo ";
+
+  for (let i = 0; i < chiffres.length; i++) {
+    sequence = sequence.replaceAll(chiffres[i], lettres[i]);
+  }
+
+  return sequence;
+}
 
 // Exercice 9 — Extraction de noms
 // Créez la fonction extraireNoms(liste) ci-dessous.
+function extraireNoms(liste) {
+  let resultat = "";
+
+  // On scinde la liste sous la forme d'un tableau contenant
+  // des couples nom:X;prénom:Y (ou prénom:Y;nom:X)
+  let personnes = liste.split(",");
+
+  // Pour chaque personne, on extrait juste le nom
+  for (let i = 0; i < personnes.length; i++) {
+    let personne = personnes[i];
+
+    // Le couple nom;prénom est toujours séparé par un point-virgule
+    // On récupère le nom et prénom dans un tableau identite
+    let identite = personne.split(";");
+
+    // identite vaut ["nom:X", "prénom:Y"] ou ["prénom:Y", "nom:X"]
+    // On cherche le nom et on concatène celui-ci au résultat
+
+    for (let j = 0; j < identite.length; j++) {
+      if (identite[j].startsWith("nom:")) {
+        // On extrait juste le nom, soit les caractères juste après
+        // le préfixe "nom:" (donc à partir de l'index 4)
+        let nom = identite[j].slice(4);
+        // On le met en majuscules et on l'ajoute au résultat
+        resultat = resultat.concat(nom.toUpperCase(), ",");
+      }
+    }
+  }
+  // On retire la dernière virgule en trop du résultat
+  return resultat.slice(0, -1);
+}
 
 // Exercice 10 — Tableur (difficile)
 // Créez la fonction tableur(liste) ci-dessous.

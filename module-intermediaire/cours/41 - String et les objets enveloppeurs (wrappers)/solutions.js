@@ -425,12 +425,16 @@ function decodeur(secret) {
   return contenu;
 
   /* Une version plus compacte... */
+
   // On récupère juste le contenu utile
   // let contenu = secret.slice(secret.indexOf('##') + 2, secret.lastIndexOf('##'));
+
   // // On déchiffre le contenu en utilisant des tableaux...
   // // (il existe plein d'autres façons de faire !)
+
   // caracteres = "-134580".split('');
   // remplacant = " ieasbo".split('');
+
   // for (let i = 0; i < caracteres.length; i++) {
   //   contenu = contenu.replaceAll(caracteres[i], remplacant[i]);
   // }
@@ -441,17 +445,22 @@ function decodeur(secret) {
 function extraireNoms(liste) {
   // Il existe plein de façons différentes de faire cet exercice !
   let resultat = "";
+  
   // On scinde la liste sous la forme d'un tableau contenant
   // des couples nom:X;prénom:Y (ou prénom:Y;nom:X)
   let personnes = liste.split(',');
+
   // Pour chaque personne, on extrait juste le nom
   for (let i = 0; i < personnes.length; i++) {
     let personne = personnes[i];
+
     // Le couple nom;prénom est toujours séparé par un point-virgule
     // On récupère le nom et prénom dans un tableau identite
     let identite = personne.split(';');
+
     // identite vaut ["nom:X", "prénom:Y"] ou ["prénom:Y", "nom:X"]
     // On cherche le nom et on concatène celui-ci au résultat
+    
     for (let j = 0; j < identite.length; j++) {
       if (identite[j].startsWith('nom:')) {
         // On extrait juste le nom, soit les caractères juste après
