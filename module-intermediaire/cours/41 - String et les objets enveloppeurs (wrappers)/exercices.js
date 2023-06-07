@@ -507,7 +507,109 @@ function extraireNoms(liste) {
 }
 
 // Exercice 10 — Tableur (difficile)
-// Créez la fonction tableur(liste) ci-dessous.
+function tableur(liste) {
+  // Tous les espaces vont être déterminés par la taille max des
+  // noms et prénoms ! Il faut donc les calculer en 1er.
+
+  // Pour chaque personne on va extraire le prénom et le nom.
+  // On stockera tous les prénoms ensemble et noms ensemble.
+  let personnes = liste.split(",");
+  let prenoms = [];
+  let noms = [];
+  for (let i = 0; i < personnes.length; i++) {
+    let personne = personnes[i];
+    // personne contient par exemple "Tom REDOCEMIA"
+    let prenomEtNom = personne.split(" ");
+    // Le prénom est le premier mot
+    let prenom = prenomEtNom[0];
+    // Le nom est le second mot
+    let nom = prenomEtNom[1];
+    // On ajoute le prenom et le nom à chaque tableau
+    prenoms.push(prenom);
+    noms.push(nom);
+  }
+
+  // Maintenant qu'on a tous les prénoms et noms, on va chercher
+  // le plus long prenom et nom. On initialise les valeurs à la
+  // taille du mot "Prénom" et "Nom" dans le header. En effet, si
+  // tous les prénoms sont plus petits que "Prénom" alors il faudra
+  // que la colonne fasse la taille de "Prénom" au minimum !
+  let taillePlusLongPrenom = "Prénom".length;
+  let taillePlusLongNom = "NOM".length;
+  // On commence par les prénoms
+  for (let i = 0; i < prenoms.length; i++) {
+    if (prenoms[i].length > taillePlusLongPrenom) {
+      taillePlusLongPrenom = prenoms[i].length;
+    }
+  }
+  // Pareil pour les noms
+  for (let i = 0; i < noms.length; i++) {
+    if (noms[i].length > taillePlusLongNom) {
+      taillePlusLongNom = noms[i].length;
+    }
+  }
+
+  // Maintenant on peut créer les espaces manquants facilement
+  let resultat = "Prénom".padStart(taillePlusLongPrenom);
+  // On ajoute les 3 espaces de séparation des colonnes;
+  resultat += "   "; // équivalent à resultat = resultat + "   "
+  resultat += "NOM".padStart(taillePlusLongNom);
+
+  // Il ne reste plus qu'à ajouter les prénoms et noms
+  for (let i = 0; i < prenoms.length; i++) {
+    // On ajoute un saut à la ligne
+    resultat += "\n";
+    resultat += prenoms[i].padStart(taillePlusLongPrenom);
+    resultat += "   ";
+    resultat += noms[i].padStart(taillePlusLongNom);
+  }
+  return resultat;
+}
 
 // Exercice 11 — Ville ou pays ? (difficile)
-// Créez la fonction villeOuPays(liste) ci-dessous.
+function villeOuPays(liste) {
+  // Voici les noms de référence pour les villes et pays
+  let listeVilles = ["Paris", "Londres", "Rome", "Berlin"];
+  let listePays = ["France", "Royaume-Uni", "Italie", "Allemagne"];
+  let resultat = [];
+
+  // On commence par extraire chaque nom dans un tableau
+  let noms = liste.split(",");
+  // Pour chaque nom, on vérifie si c'est une ville ou un pays
+  for (let i = 0; i < noms.length; i++) {
+    let nom = noms[i];
+    // Le nom peut être mal formaté, on retire les espaces en trop
+    nom = nom.trim();
+    // On le met en minuscules avant comparaison
+    nom = nom.toLowerCase();
+
+    // On le compare avec notre liste de villes
+    for (let i = 0; i < listeVilles.length; i++) {
+      let ville = listeVilles[i];
+      // On fait la comparaison en minuscules pour éviter les
+      // problèmes de formatage des lettres (majuscules/minuscules)
+      if (ville.toLowerCase() === nom) {
+        // C'est une ville, on l'ajoute à résultat, ici on utilise
+        // ville qui contient le nom de la ville correctement
+        // formatée (c'est notre référence)
+        resultat.push("VILLE:" + ville);
+      }
+    }
+
+    // On le compare avec notre liste de pays
+    for (let i = 0; i < listePays.length; i++) {
+      let pays = listePays[i];
+      // On fait la comparaison en minuscules pour éviter les
+      // problèmes de formatage des lettres (majuscules/minuscules)
+      if (pays.toLowerCase() === nom) {
+        // C'est un pays, on l'ajoute à résultat, ici on utilise
+        // pays qui contient le nom du pays correctement
+        // formaté (c'est notre référence)
+        resultat.push("PAYS:" + pays);
+      }
+    }
+  }
+
+  // On construit la chaîne finale avec join()
+  return resultat.join(",");
+}
