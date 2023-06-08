@@ -21,53 +21,52 @@
  * Merci et bon courage ! 🤘
  */
 
+//  Number.isNaN()          =>  (true / false)    permet de savoir si ce n'est pas un nombre
+//  Number.isFinite()       =>  (true / false)    permet de savoir si c'est un nombre fini
+//  Number.isInteger()      =>  (true / false)    permet de savoir si c'est un nombre entier
+//  Number.isSafeInteger()  =>  (true / false)    permet de savoir si c'est un nombre safe (compris entre le min et max de JS)
+
+//  Number.parseFloat()     =>  Convertit une chaîne de caractères en un nombre flottant
+//  Number.parseInt()       =>  Convertit une chaine de caractères, fournie en argument, en un entier dans la base souhaitée.
+
+//  Number.toFixed()()      =>  Formate un nombre en notation à point-fixe (2 chiffres après la virgule)
+//  Number.toString()       =>  Renvoie une chaîne de caractère représentant l'objet Number.
+
 // Exercice 0
 // Créez la fonction isNaN0(valeur) ci-dessous.
-
 
 // Exercice 1
 // Créez la fonction isFinite0(valeur) ci-dessous.
 
-
 // Exercice 2
 // Créez la fonction isInteger0(valeur) ci-dessous.
-
 
 // Exercice 3
 // Créez la fonction isSafeInteger0(valeur) ci-dessous.
 
-
 // Exercice 4
 // Créez la fonction parseFloat0(chaine) ci-dessous.
-
 
 // Exercice 5
 // Créez la fonction parseInt0(chaine) ci-dessous.
 
-
 // Exercice 6
 // Créez la fonction parseInt1(binaire) ci-dessous.
-
 
 // Exercice 7
 // Créez la fonction parseInt2(hexa) ci-dessous.
 
-
 // Exercice 8
 // Créez la fonction toFixed0(valeur) ci-dessous.
-
 
 // Exercice 9
 // Créez la fonction toString0(valeur) ci-dessous.
 
-
 // Exercice 10
 // Créez la fonction toString1(nombre) ci-dessous.
 
-
 // Exercice 11
 // Créez la fonction toString2(nombre) ci-dessous.
-
 
 /********************/
 /* Exercices finaux */
@@ -76,11 +75,8 @@
 // Exercice 0 — Décodeur
 // Créez la fonction decodeur(secret) ci-dessous.
 
-
 // Exercice 1 — Encodeur
 // Créez la fonction encodeur(message) ci-dessous.
 
-
 // Exercice 2 — Panier de fruits
 // Créez la fonction totalPanier(commandes) ci-dessous.
-
