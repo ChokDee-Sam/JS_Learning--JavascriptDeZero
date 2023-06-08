@@ -1,0 +1,8 @@
+/* Number.isNaN() VS window.isNaN() (et isFinite()) */
+// window dans un navigateur, global dans Node.js, mais c'est une ancienne manière de faire, moins bien
+// console.log(global.isNaN(NaN)); // ne plus jamais prendre les méthodes sur l'objet global
+// console.log(Number.isNaN("bonjour"));
+
+Pour la méthode toFixed()
+mettre une parenthese pour un chiffre sans virgule, ou bien un chiffre à virgule, ou encore mieux : une variable
+console.log((42).toFixed(2));

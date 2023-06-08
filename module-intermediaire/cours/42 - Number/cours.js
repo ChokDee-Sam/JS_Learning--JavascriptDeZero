@@ -27,11 +27,13 @@
 // console.log(primitive.toFixed(2));
 // console.log(typeof primitive);
 
-// console.log(42.toFixed(2));
+// console.log((42).toFixed(2));
 
 /* Number.isNaN() VS window.isNaN() (et isFinite()) */
+// window dans un navigateur, global dans Node.js, mais c'est une ancienne manière de faire, moins bien
+// console.log(global.isNaN(NaN)); // ne plus jamais prendre les méthodes sur l'objet global
 // console.log(Number.isNaN("bonjour"));
-// console.log(Number.isFinite(1/0));
+// console.log(Number.isFinite(1 / 0));
 
 /* Méthodes simples à connaître */
 
