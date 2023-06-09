@@ -127,6 +127,24 @@ function decodeur(secret) {
 
 // Exercice 1 — Encodeur
 // Créez la fonction encodeur(message) ci-dessous.
+function encodeur(message) {
+  let messageAvecCode = "";
+
+  // Pour chaque caractère du message...
+  for (let i = 0; i < message.length; i++) {
+    // On récupère le nombre correspondant à chaque caractère
+    let lettreCode = message.charCodeAt([i]);
+
+    // On le convertit en binaire
+    let codeBinaire = lettreCode.toString(2);
+
+    // On ajoute les 0 devant pour faire 8 chiffres et on ajoute
+    // au résultat avec += (concaténation)
+    messageAvecCode += codeBinaire.padStart(8, "0");
+  }
+
+  return messageAvecCode;
+}
 
 // Exercice 2 — Panier de fruits
 // Créez la fonction totalPanier(commandes) ci-dessous.
