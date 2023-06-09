@@ -40,68 +40,68 @@ function isNaN0(valeur) {
 
 // Exercice 1
 // Créez la fonction isFinite0(valeur) ci-dessous.
-function isFinite0(valeur){
-    return Number.isFinite(valeur)
+function isFinite0(valeur) {
+  return Number.isFinite(valeur);
 }
 
 // Exercice 2
 // Créez la fonction isInteger0(valeur) ci-dessous.
-function isInteger0(valeur){
-    return Number.isInteger(valeur)
+function isInteger0(valeur) {
+  return Number.isInteger(valeur);
 }
 
 // Exercice 3
 // Créez la fonction isSafeInteger0(valeur) ci-dessous.
-function isSafeInteger0(valeur){
-    return Number.isSafeInteger(valeur)
+function isSafeInteger0(valeur) {
+  return Number.isSafeInteger(valeur);
 }
 
 // Exercice 4
 // Créez la fonction parseFloat0(chaine) ci-dessous.
-function parseFloat0(chaine){
-    return Number.parseFloat(chaine)
+function parseFloat0(chaine) {
+  return Number.parseFloat(chaine);
 }
 
 // Exercice 5
 // Créez la fonction parseInt0(chaine) ci-dessous.
-function parseInt0(chaine){
-    return Number.parseInt(chaine)
+function parseInt0(chaine) {
+  return Number.parseInt(chaine);
 }
 
 // Exercice 6
 // Créez la fonction parseInt1(binaire) ci-dessous.
 function parseInt1(binaire) {
-    return Number.parseInt(binaire, 2)
+  return Number.parseInt(binaire, 2);
 }
 
 // Exercice 7
 // Créez la fonction parseInt2(hexa) ci-dessous.
-function parseInt2(hexa){
-    return Number.parseInt(hexa, 16)
+function parseInt2(hexa) {
+  return Number.parseInt(hexa, 16);
 }
 
 // Exercice 8
 // Créez la fonction toFixed0(valeur) ci-dessous.
-function toFixed0(valeur){
-    return valeur.toFixed(3)
+function toFixed0(valeur) {
+  return valeur.toFixed(3);
 }
 
 // Exercice 9
 // Créez la fonction toString0(valeur) ci-dessous.
 function toString0(valeur) {
-    return valeur.toString()
+  return valeur.toString();
 }
 
 // Exercice 10
 // Créez la fonction toString1(nombre) ci-dessous.
-function toString1(nombre){
-    return nombre.toString(2)
+function toString1(nombre) {
+  return nombre.toString(2);
 }
 
 // Exercice 11
 // Créez la fonction toString2(nombre) ci-dessous.
-function toString2(nombre){
-    return nombre.toString(16)
+function toString2(nombre) {
+  return nombre.toString(16);
 }
 
 /********************/
@@ -110,6 +110,20 @@ function toString2(nombre){
 
 // Exercice 0 — Décodeur
 // Créez la fonction decodeur(secret) ci-dessous.
+function decodeur(secret) {
+  let message = "";
+
+  // On incrémente de 8 unités pour découper par bloc de 8 chiffres
+  for (let i = 0; i < secret.length; i += 8) {
+    // On découpe 8 caractères
+    let binaire = secret.slice(i, i + 8);
+    // On convertit en base 10 le binaire qui est en base 2
+    let nombre = Number.parseInt(binaire, 2);
+    // On ajoute au résultat la lettre correspondante au nombre
+    message += String.fromCharCode(nombre);
+  }
+  return message;
+}
 
 // Exercice 1 — Encodeur
 // Créez la fonction encodeur(message) ci-dessous.
