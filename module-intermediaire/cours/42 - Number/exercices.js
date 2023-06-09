@@ -26,47 +26,83 @@
 //  Number.isInteger()      =>  (true / false)    permet de savoir si c'est un nombre entier
 //  Number.isSafeInteger()  =>  (true / false)    permet de savoir si c'est un nombre safe (compris entre le min et max de JS)
 
-//  Number.parseFloat()     =>  Convertit une chaîne de caractères en un nombre flottant
-//  Number.parseInt()       =>  Convertit une chaine de caractères, fournie en argument, en un entier dans la base souhaitée.
+//  Number.parseFloat()     =>  Renvoie le nombre [à virgule] au début de la chaine, et NaN si cette chaine ne commence pas par une nombre
+//  Number.parseInt()       =>  Renvoie le nombre [entier] au début de la chaine et NaN si cette chaine ne commence pas par une nombre.
 
-//  Number.toFixed()()      =>  Formate un nombre en notation à point-fixe (2 chiffres après la virgule)
+//  valeur.toFixed()()      =>  Formate un nombre en notation à point-fixe (2 chiffres après la virgule)
 //  Number.toString()       =>  Renvoie une chaîne de caractère représentant l'objet Number.
 
 // Exercice 0
 // Créez la fonction isNaN0(valeur) ci-dessous.
+function isNaN0(valeur) {
+  return Number.isNaN(valeur);
+}
 
 // Exercice 1
 // Créez la fonction isFinite0(valeur) ci-dessous.
+function isFinite0(valeur){
+    return Number.isFinite(valeur)
+}
 
 // Exercice 2
 // Créez la fonction isInteger0(valeur) ci-dessous.
+function isInteger0(valeur){
+    return Number.isInteger(valeur)
+}
 
 // Exercice 3
 // Créez la fonction isSafeInteger0(valeur) ci-dessous.
+function isSafeInteger0(valeur){
+    return Number.isSafeInteger(valeur)
+}
 
 // Exercice 4
 // Créez la fonction parseFloat0(chaine) ci-dessous.
+function parseFloat0(chaine){
+    return Number.parseFloat(chaine)
+}
 
 // Exercice 5
 // Créez la fonction parseInt0(chaine) ci-dessous.
+function parseInt0(chaine){
+    return Number.parseInt(chaine)
+}
 
 // Exercice 6
 // Créez la fonction parseInt1(binaire) ci-dessous.
+function parseInt1(binaire) {
+    return Number.parseInt(binaire, 2)
+}
 
 // Exercice 7
 // Créez la fonction parseInt2(hexa) ci-dessous.
+function parseInt2(hexa){
+    return Number.parseInt(hexa, 16)
+}
 
 // Exercice 8
 // Créez la fonction toFixed0(valeur) ci-dessous.
+function toFixed0(valeur){
+    return valeur.toFixed(3)
+}
 
 // Exercice 9
 // Créez la fonction toString0(valeur) ci-dessous.
+function toString0(valeur) {
+    return valeur.toString()
+}
 
 // Exercice 10
 // Créez la fonction toString1(nombre) ci-dessous.
+function toString1(nombre){
+    return nombre.toString(2)
+}
 
 // Exercice 11
 // Créez la fonction toString2(nombre) ci-dessous.
+function toString2(nombre){
+    return nombre.toString(16)
+}
 
 /********************/
 /* Exercices finaux */
