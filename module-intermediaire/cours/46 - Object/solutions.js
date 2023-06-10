@@ -43,6 +43,7 @@ function inverser(objet) {
   const resultat = {};
   const cles = Object.keys(objet);
   const valeurs = Object.values(objet);
+  
   for (let i = 0; i < cles.length; i++) {
     const cle = cles[i];
     const valeur = valeurs[i];
