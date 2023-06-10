@@ -6,12 +6,12 @@
 console.log(Date.now());
 
 // Les dates sont en anglais et dans la timezone locale
-// let maintenant = new Date();
-// console.log(maintenant);
+let maintenant = new Date();
+console.log(maintenant);
 
 // Il faut utiliser les méthodes avec "locale"
-// console.log(maintenant.toDateString());
-// console.log(maintenant.toLocaleDateString());
+console.log(maintenant.toDateString());
+console.log(maintenant.toLocaleDateString());
 
 // Librairie externe : https://momentjs.com
 

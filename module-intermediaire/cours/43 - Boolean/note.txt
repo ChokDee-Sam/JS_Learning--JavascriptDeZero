@@ -1,0 +1,8 @@
+Généralement, on utilise Boolean sans le New 
+
+Boolean("quelquechose")
+Sert uniquement à convertir d'un type primitif à un autre
+
+Astuce  
+- Boolean("quelquechose")    = recommandé
+- !!("quelquechose")         = pas recommandé 
