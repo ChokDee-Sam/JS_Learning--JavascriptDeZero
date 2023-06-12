@@ -1,0 +1,27 @@
+elNouvelItem.addEventListener("input", function (e) {
+  console.log(`ok !`);
+});
+
+elNouvelItem.addEventListener("invalid", function (e) {
+  console.log("invalid");
+  const nom = elNouvelItem.value;
+
+  if (nom.length === 0) {
+    elNouvelItem.setCustomValidity(
+      "Vous devez indiquer les informations de l'item, exemple : 250 g chocolat"
+    );
+  } else {
+    elNouvelItem.setCustomValidity(
+      "Les caractères spéciaux, les accents et autres lettres spécifiques ne sont pas autorisés"
+    );
+  }
+});
+
+
+
+
+Lorsqu'il y a un evenement "invalid"
+    il y aura toujours un message d'erreur invalide, même en supprimant les erreurs
+        on ne peut pas valider un message après une invalidation
+            Pour réparer ça, on doit remettre un message d'erreur vide lors d'evenement input
+                .setCustomValidity('')
