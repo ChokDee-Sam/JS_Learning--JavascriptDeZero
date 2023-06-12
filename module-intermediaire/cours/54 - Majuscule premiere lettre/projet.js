@@ -1,16 +1,16 @@
 /* Rédigez votre code ci-dessous */
 // Récupérer une référence sur le template
-const elTemplateItem = document.querySelector('#template-item');
-const elNouvelItem = document.querySelector('#nouvel-item');
-const elListe = document.querySelector('#liste');
+const elTemplateItem = document.querySelector("#template-item");
+const elNouvelItem = document.querySelector("#nouvel-item");
+const elListe = document.querySelector("#liste");
 
 // Détecter la soumission du formulaire
-const elForm = document.querySelector('form');
+const elForm = document.querySelector("form");
 
-elForm.addEventListener('submit', function(e) {
+elForm.addEventListener("submit", function (e) {
   // On empêche le rechargement de la page
   e.preventDefault();
-  
+
   // Créer un élément <li> à partir du template
   const elLi = elTemplateItem.content.cloneNode(true);
 
@@ -26,9 +26,12 @@ elForm.addEventListener('submit', function(e) {
   nomItem = nomItem.replace(/ {2,}/g, " ");
   // Remplacer les 2 espaces par 1 seul espace
 
+  //
+  nomItem = nomItem.replace(nomItem[0], nomItem[0].toUpperCase());
+
   // Injecter cette valeur dans l'élément <li>
   // Sélectionner l'élément nom <p>
-  const elNom = elLi.querySelector('.nom');
+  const elNom = elLi.querySelector(".nom");
   elNom.textContent = nomItem;
 
   // Ajouter l'élément <li> dans la liste <ul>
@@ -39,5 +42,4 @@ elForm.addEventListener('submit', function(e) {
 
   // Mettre le focus immédiatement sur le champ nouvel item
   elNouvelItem.focus();
-  
 });
