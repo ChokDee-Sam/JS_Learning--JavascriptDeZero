@@ -1,14 +1,14 @@
 /* Rédigez votre code ci-dessous */
 
 // Récupérer une référence sur le template
-const elTemplateItem = document.querySelector("#template-item");
-const elNouvelItem = document.querySelector("#nouvel-item");
-const elListe = document.querySelector("#liste");
+const elTemplateItem = document.querySelector("#template-item"); //template
+const elNouvelItem = document.querySelector("#nouvel-item"); //input
+const elListe = document.querySelector("#liste"); //ul de destination
 
 // Détecter la soumission du formulaire
-const elForm = document.querySelector("form");
+const elForm = document.querySelector("form"); //form contenant input
 
-elForm.addEventListener("submit", function (e) {
+elForm.addEventListener("submit", function (e) { 
   // On empêche le rechargement de la page
   e.preventDefault();
 

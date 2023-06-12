@@ -33,8 +33,8 @@
 // replaceAll() =>  remplace TOUTES les chaines de caractère par une autre
 
 // indexOf      =>  return l'index en partant du début
-
 // lastIndexOf  =>  return l'index en partant de la fin
+
 // charAt()     =>  return le caractère à la position indiquée
 
 // includes()   =>  return true / false
