@@ -45,14 +45,15 @@ elForm.addEventListener("submit", function (e) {
 //
 
 elNouvelItem.addEventListener("input", function (e) {
-  console.log(`ok !`);
-  elNouvelItem.setCustomValidity(""); // pour éviter de rester dans un message "invalid" en supprimant les caracteres non valides. Mais par défault, reprends le message d'erreur par défault issus de l'html input title
-
-  elNouvelItem.checkValidity(); // vérifie la validité du champs grace à l'input pattern html (à chaque fois que sa valeur est modifiée grace à "input"), et en cas de valeur invalide, il déclenche l'evenement "invalid", afin de ne pas rester sur le message d'erreur par défault
+  // console.log(`ok !`);
+  // pour éviter de rester dans un message "invalid" en supprimant les caracteres non valides. Mais par défault, reprends le message d'erreur par défault issus de l'html input title
+  elNouvelItem.setCustomValidity(""); 
+  elNouvelItem.checkValidity(); 
+  // vérifie la validité du champs grace à l'input pattern html (à chaque fois que sa valeur est modifiée grace à "input"), et en cas de valeur invalide, il déclenche l'evenement "invalid", afin de ne pas rester sur le message d'erreur par défault
 });
 
 elNouvelItem.addEventListener("invalid", function (e) {
-  console.log("invalid");
+  // console.log("invalid");
   const nom = elNouvelItem.value;
 
   if (nom.length === 0) {
