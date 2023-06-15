@@ -30,7 +30,10 @@ elForm.addEventListener('submit', function(e) {
   // Est-ce que le 1er mot est un nombre ?
   let mots = nomItem.split(' ');
   let premierMot = mots[0];
+  let deuxiemeMot = mots[1];
+  let troisiemeMot = mots[2];
   let quantite;
+  let unite
 
   if (Number.isInteger(Number(premierMot))) {
     // Si c'est une quantité, il faut l'extraire
@@ -39,11 +42,17 @@ elForm.addEventListener('submit', function(e) {
     quantite = Number(premierMot);
 
     // Si le 2e mot est une unité, l'extraire
-    // Sinon c'est que le 2e mot est un nom
+    const UNITES = ['u', 'kg', 'g', 'L']
+    if (UNITES.includes(deuxiemeMot)) {
+      unite = deuxiemeMot
+      nomItem = troisiemeMot
+    } else {
+      // Sinon c'est que le 2e mot est un nom
+      nomItem = deuxiemeMot
+    }
   }
 
-  // Sinon, c'est que c'est juste un nom
-  // <nom>
+
 
   // Mettre la 1ère lettre en majuscule
   // pommes => P + ommes
@@ -53,9 +62,11 @@ elForm.addEventListener('submit', function(e) {
   // Sélectionner l'élément nom <p>
   const elNom = elLi.querySelector('.nom');
   const elQuantite = elLi.querySelector('.quantite');
+  const elUnite = elLi.querySelector('.unite');
   
   elNom.textContent = nomItem;
   elQuantite.textContent = quantite;
+  elUnite.value = unite;
 
   // Ajouter l'élément <li> dans la liste <ul>
   liste.append(elLi);
