@@ -1,5 +1,10 @@
 /* Rédigez votre code ci-dessous */
 // Récupérer une référence sur le template
+
+
+
+
+
 const elTemplateItem = document.querySelector('#template-item');
 const elNouvelItem = document.querySelector('#nouvel-item');
 const elListe = document.querySelector('#liste');
@@ -34,6 +39,8 @@ elForm.addEventListener('submit', function(e) {
   nomItem = nomItem.replace(/ {2,}/g, " ");
 
   const objetItem = extraireDonnees(nomItem);
+
+  
 
   // Sauvegarder les données dans localStorage
   localStorage.setItem("liste", nomItem);
