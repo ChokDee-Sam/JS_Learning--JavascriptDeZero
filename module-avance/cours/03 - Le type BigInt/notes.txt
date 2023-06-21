@@ -1,0 +1,9 @@
+Tip : Pour enregistrer un nombre plus grand que maxSafeInteger
+    Le mettre dans une String
+
+Attention au triple égal (ajouter un n)
+cinq === 5 // false
+cinq === 5n // true
+
+Pour utiliser Math.
+    convertir en Number
