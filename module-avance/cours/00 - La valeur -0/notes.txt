@@ -1,0 +1,14 @@
+NaN ne sera jamais égal à lui même
+    sauf avec
+        Number.isNan(valeur)
+    et  Object.is(valeur.NaN)       depuis ES6
+
+
+
+Pour comparer les zéros négatifs et zéros positifs
+    Object.is(valeur.NaN)
+
+
+
+Math.sign()     ne renvoie pas positif
+                uniquement négatif et neutre
