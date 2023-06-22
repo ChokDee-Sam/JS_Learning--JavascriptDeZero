@@ -1,0 +1,16 @@
+// (Rappel falsy => 0, -0, 0n, -0n, NaN, false, null, undefined, "")
+// || et && travaillent sur des expressions truthy ou falsy
+
+// ET Logique
+// expr1 && expr2
+// C'est truthy  ? On continue
+
+// OU Logique
+// expr1 || expr2	
+// C'est truthy git a ? On s'arrête
+
+
+
+
+
+// 15min35 (pas compris l'évaluation undefined)
