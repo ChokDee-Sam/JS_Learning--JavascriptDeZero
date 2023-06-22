@@ -1,0 +1,13 @@
+// zéro, '' (texte vide) = renvoient falsy
+
+// ?? travaille sur des expressions "nullish" (non définies) : null et undefined
+
+
+// Ça permet les cours circuits uniquement sur les expression "nullish"
+// Et donc, ça permet de mettre en truthy le reste (chaine de caractères vide, chiffre zéro, etc...)
+
+
+// Interdit d'utiliser en combinaison avec || et && pour éviter les erreurs */
+// Solution => mettre des parenthèses
+
+// let exemple = duree ?? (console.log("durée min utilisée") || minDuree);
