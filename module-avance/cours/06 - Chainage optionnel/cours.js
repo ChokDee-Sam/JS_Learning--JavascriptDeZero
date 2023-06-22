@@ -37,7 +37,7 @@ let stagiaire = {
 // console.log(`Portable de ${stagiaire.prenom} : ${telMobile}`);
 
 /* Solution alternative plus compacte */
-// let telMobile = stagiaire.contact && stagiaire.contact.tel ? stagiaire.contact.tel.mobile : "Non renseigné";
+let telMobile = stagiaire.contact && stagiaire.contact.tel ? stagiaire.contact.tel.mobile : "Non renseigné";
 // console.log(`Portable de ${stagiaire.prenom} : ${telMobile}`);
 
 /* Fonctionnement du nouvel opérateur ?. */

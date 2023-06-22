@@ -1,28 +1,16 @@
-// -------------------------------------------
 // Facilité d'écriture allégée
-// -------------------------------------------
-
 let telMobile = stagiaire.contact?.tel?.mobile
 
 
-// -------------------------------------------
 // Différentes façons de l'utiliser */
-// -------------------------------------------
-
 let proprieteEmail = "email";
 console.log(stagiaire.contact?.[proprieteEmail]);
 
 
-// -------------------------------------------
 // Erreurs potentielles !
-// -------------------------------------------
-
 // undefined.undefined => bug / erreur
 
 
-// -------------------------------------------
 // COMBINAISON :
 //  Chainage Optionel + Coalescence des Nuls
-// -------------------------------------------
-
 let exemple = stagiaire.contact?.tel?.mobile ?? "Non renseigné";

@@ -27,6 +27,7 @@ executerAnimation(animation);
 /* Ce qu'il faut retenir */
 // || et && travaillent sur des expressions truthy ou falsy
 // (Rappel falsy => 0, -0, 0n, -0n, NaN, false, null, undefined, "")
+
 // ?? travaille sur des expressions "nullish" (non définies) : null et undefined
 
 /* Court-circuit avec fonctions (pareil que pour || et &&) */
