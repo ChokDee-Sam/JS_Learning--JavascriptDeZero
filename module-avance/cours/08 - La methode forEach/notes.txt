@@ -1,0 +1,20 @@
+3 parametres possibles, dans l'ordre
+- valeur
+- index
+- tab
+
+Avantage :  pas besoin d'utiliser un .length / [i] / etc
+Tout se fait automatiquement, avec 1 à 3 paramètres
+
+
+Avec une boucle forEach : on sera obligé d'itérer sur tous les éléments
+    Pas possible de Break 
+    alors qu'avec une boucle For : on peut !
+
+
+Sur quels types de données ?
+- Array
+- Map
+- Set
+- NodeList
+- DOMTokenList (dans la propriété classList des elements HTML)

@@ -5,6 +5,7 @@ console.log(lis);
 // Avec une boucle for classique
 console.log("Boucle for classique");
 for (let i = 0; i < lis.length; i++) {
+  // console.log(i, lis[i], lis);
   console.log(i, lis.item(i), lis);
 }
 
