@@ -1,0 +1,23 @@
+Avantages : Améliore la lecture du code, et la visibilité
+On comprends en 1 coup d'oeil, par exemple, qu'on souhaite lire :
+
+- toutes les valeurs d'un tableau (et pas son index)
+    for (let valeur of tableau) {
+        console.log(valeur);
+    }
+
+- ou toutes les li d'une liste
+    for (let li of lis) {
+        console.log(li);
+    }
+
+
+Possibilité de faire un Break (contrairement à forEach)
+
+Sur quels types de données : les itérables
+- Array
+- String
+- Map
+- Set
+
+/* Exemple d'utilisation de for...of avec NodeList et DOMTokenList */
