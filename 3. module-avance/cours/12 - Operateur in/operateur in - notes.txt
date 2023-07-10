@@ -1,0 +1,20 @@
+Opérateur in
+Permet de détecter si une propriété existe sur un objet 
+    et peut importe sa valeur (même undefined)
+
+
+(les arrays sont des objets sans prop définies, donc ça fonctionne)
+
+
+Quelle différence avec tester si la valeur est undefined ?
+PROBLEME : Une propriété existe, mais sa valeur est 'undefined'
+    => ça return une réponse qui nous induira en erreur
+
+Pour éviter ce genre de problème, on utilise l'opérateur in
+
+
+Pour tester si une clé n'est pas dans un objet, on utilise des parentheses (sinon il y aura conversion en boolean de la clé...)
+if (! ("propriete_1" in objet))
+
+
+L'opérateur in va chercher dans les propriété héritées
