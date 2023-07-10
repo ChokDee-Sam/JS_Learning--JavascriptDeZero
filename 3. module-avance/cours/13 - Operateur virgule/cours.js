@@ -18,5 +18,5 @@ console.log(a, b, c, d);
 
 /* Attention à la précédence faible de cet opérateur */
 // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
-// a = 2 + 3, 5 + 8;
-// console.log(a);
+a = 2 + 3, 5 + 8;
+console.log(a);

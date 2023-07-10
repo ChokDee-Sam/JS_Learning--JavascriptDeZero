@@ -1,0 +1,15 @@
+Opérateur virgule ,
+
+C'est ce qui est après la dernière virgule qui est pris en compte
+(exemple, addition, ou console.log)
+let d = 42 + (a++, b++, c + 3)
+console.log((i, j));
+
+
+Mais aussi, dans certains cas, ça permet de rajouter un paramètre
+(exemple, dans une boucle for)
+for (let i = 1, j = 10; i <= 10; i++, j--)
+
+
+Attention à la précédence faible de cet opérateur !
+(il passe après le reste, et donc n'est pas pris en compte)
