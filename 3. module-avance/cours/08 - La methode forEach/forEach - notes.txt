@@ -1,3 +1,7 @@
+forEach
+Exécute une fonction sur chaque élément du tableau
+
+
 3 parametres possibles, dans l'ordre
 - valeur
 - index

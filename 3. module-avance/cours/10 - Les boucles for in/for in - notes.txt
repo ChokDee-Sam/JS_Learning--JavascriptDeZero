@@ -1,0 +1,19 @@
+for...in
+Permet de boucler sur des objets
+Affichera chaque propriété d'objet, puis sa valeur
+
+for (let propriete in objet) {
+    console.log(`${propriete}   =>  ${objet[propriete]}`)
+}
+
+Ordre d'apparition
+- D'abord les propriétés numériques (dans l'ordre ascendant)
+- Puis les propriétés non numériques (dans l'ordre de création)
+
+Pour un Array : 
+c'est possible MAIS chaque propriété sera un nombre (car un array est un objet sans proprietes definis)
+for...in ne doit pas être utilisée pour parcourir un Array lorsque l'ordre des éléments est important.
+
+Bonus : pour avoir le même genre de boucle for...in avec for...of for (let propriete of Object.keys(personnage)) {
+    console.log(`${propriete} => ${personnage[propriete]}`);
+}

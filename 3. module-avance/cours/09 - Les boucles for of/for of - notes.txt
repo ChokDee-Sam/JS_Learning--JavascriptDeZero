@@ -1,3 +1,9 @@
+For...of
+Créer une boucle qui parcourt un objet itérables (array, map, etc)
+    et qui permet d'exécuter une ou plusieurs instructions
+        pour la valeur de chaque propriété
+
+
 Avantages : Améliore la lecture du code, et la visibilité
 On comprends en 1 coup d'oeil, par exemple, qu'on souhaite lire :
 

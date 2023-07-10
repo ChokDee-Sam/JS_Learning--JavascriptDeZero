@@ -10,14 +10,14 @@ let personnage = {
 };
 
 /* Quelle est sa syntaxe et son utilité ? */
-for (let propriete in personnage) {
-  console.log(`${propriete} => ${personnage[propriete]}`);
-}
+// for (let propriete in personnage) {
+//   console.log(`${propriete} => ${personnage[propriete]}`);
+// }
 
 /* Et sur un tableau ? */
 // let tableau = ["zero", "un", "deux"];
-// for (let index in tableau) {
-//   console.log(`${index} => ${tableau[index]}`);
+// for (let prop in tableau) {
+//   console.log(`${prop} => ${tableau[prop]}`);
 // }
 
 /* Rappel : un tableau est un objet */
@@ -26,19 +26,19 @@ for (let propriete in personnage) {
 /* Dans quel ordre sont énumérées les propriétés ? */
 // Dans l'ordre de création pour les propriétés NON numériques
 // Dans l'ordre ascendant pour les propriétés numériques
-// let exemple = {
-//   bac: "baccalaureat",
-//   0: "zero",
-//   "42": "quarante-deux",
-//   zic: "musique",
-//   12: "douze",
-//   "5": "cinq",
-//   abs: "absolu",
-// };
+let exemple = {
+  bac: "baccalaureat",
+  0: "zero",
+  42: "quarante-deux",
+  zic: "musique",
+  12: "douze",
+  5: "cinq",
+  abs: "absolu",
+};
 
-// for (let propriete in exemple) {
-//   console.log(`${propriete} => ${exemple[propriete]}`);
-// }
+for (let propriete in exemple) {
+  console.log(`${propriete} => ${exemple[propriete]}`);
+}
 
 /* BONUS : Équivalent d'un for...in avec un for...of */
 // for (let propriete of Object.keys(personnage)) {

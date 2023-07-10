@@ -33,9 +33,9 @@ let tableau = ["zero", "un", "deux"];
 // tableau.forEach(afficherElement);
 
 // Via une fonction anonyme...
-// tableau.forEach(function (element) {
-//   console.log(element);
-// });
+tableau.forEach(function (element) {
+  console.log(element);
+});
 
 // À quoi sert la référence sur le tableau ?
 // [0, 1, 2].forEach(function (valeur, index, tab) {
