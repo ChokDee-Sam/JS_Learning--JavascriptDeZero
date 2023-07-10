@@ -1,0 +1,17 @@
+Valeurs de Tableau (Ordre ascendant/numérique / Break)
+- for
+- for...of
+- forEach
+
+Valeurs ET Indices (pas de break)
+- forEach
+
+Itération avancée (à l'envers, 1 item sur 2, break, etc)
+- for
+
+Objet (y compris les propriétés héritées)
+- for...in
+
+Objet (sans les propriétés héritées)
+- for...of  sur object.keys 
+(object.keys => génère un tableau avec uniquement les propriétés)

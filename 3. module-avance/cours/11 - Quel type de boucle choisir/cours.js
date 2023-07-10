@@ -16,19 +16,19 @@ let personnage = {
 
 /* Si on travaille sur un tableau */
 // Itération sur les valeurs dans l'ordre ascendant : for...of
-for (let valeur of tableau) {
-  console.log(valeur);
-}
+// for (let valeur of tableau) {
+//   console.log(valeur);
+// }
 
 // Itération sur les valeurs & indices dans l'ordre ascendant : forEach()
-tableau.forEach(function(valeur, indice) {
-  console.log(indice, valeur);
-});
+// tableau.forEach(function(valeur, indice) {
+//   console.log(indice, valeur);
+// });
 
 // Itération avancée (à l'envers, un item sur 2, etc.) : for (;;)
-for (let i = 0; i < tableau.length; i += 2) {
-  console.log(tableau[i]);
-}
+// for (let i = 0; i < tableau.length; i += 2) {
+//   console.log(tableau[i]);
+// }
 
 /* Si on travaille sur un objet */
 // On veut itérer sur toutes les propriétés (y compris celles héritées) : for...in
