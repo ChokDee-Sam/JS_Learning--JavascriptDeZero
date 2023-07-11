@@ -1,0 +1,17 @@
+Contrairement à forEach => .filter 
+crée et retourne un nouveau tableau 
+    contenant tous les éléments du tableau d'origine
+    qui remplissent une condition déterminée par la fonction callback.
+
+Pas de modification du tableau original 
+
+(Alors que forEAch exécute une fonction donnée sur chaque élément d'un tableau)
+
+
+Possibilité d'avoir une fonction callback 'classique', tout comme une fonction anonyme 
+
+
+La fonction de callback peut prendre jusqu'à 3 paramètres :
+- valeur
+- index
+- tableau (Array)

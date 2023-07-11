@@ -9,29 +9,32 @@ let tableau = ["zero", "un", "deux", "trois"];
 // Fonction de callback : function (valeur, index, tableau)
 
 /* Prendre les mots d'une longueur supérieure ou égale à 3 */
-function longueurSuperieurOuEgaleA3(chaine) {
-  if (chaine.length >= 3) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function longueurSuperieurOuEgaleA3(chaine) {
+//   if (chaine.length >= 3) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-let resultat = tableau.filter(longueurSuperieurOuEgaleA3);
-console.log(resultat);
+// let resultat = tableau.filter(longueurSuperieurOuEgaleA3);
+// console.log(resultat);
 
 /* Un NOUVEAU tableau est créé ! */
 // console.log(tableau, resultat);
 
 /* Avec une fonction anonyme : Filtrer les mots de 4 lettres avant l'index 2 */
-// resultat = tableau.filter(function(valeur, index) {
-//   if (valeur.length === 4 && index < 2) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// });
-// console.log(resultat);
+resultat = tableau.filter(function(valeur, index) {
+  return valeur.length === 4 && index < 2    
+  // permet d'écrire plus court, car ça implique un true
+
+  // if (valeur.length === 4 && index <= 2) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+});
+console.log(resultat);
 
 /* Prendre 1 élément sur 2 */
 // resultat = tableau.filter(function(valeur, index) {
