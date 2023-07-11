@@ -15,3 +15,10 @@ La fonction de callback peut prendre jusqu'à 3 paramètres :
 - valeur
 - index
 - tableau (Array)
+
+
+Penser à utiliser le débugger pas à pas, 
+pour bien comprendre comment la methode filter fonctionne
+
+
+Subtilité dans le dernier exemple, c'est un Array avec 3 objets à l'intérieur

@@ -24,25 +24,27 @@ let tableau = ["zero", "un", "deux", "trois"];
 // console.log(tableau, resultat);
 
 /* Avec une fonction anonyme : Filtrer les mots de 4 lettres avant l'index 2 */
-resultat = tableau.filter(function(valeur, index) {
-  return valeur.length === 4 && index < 2    
-  // permet d'écrire plus court, car ça implique un true
-
-  // if (valeur.length === 4 && index <= 2) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-});
-console.log(resultat);
-
-/* Prendre 1 élément sur 2 */
 // resultat = tableau.filter(function(valeur, index) {
-//   if (index % 2 === 0) {
+// permet d'écrire plus court, car ça implique un true
+// return valeur.length === 4 && index < 2
+
+//   if (valeur.length === 4 && index < 2) {
 //     return true;
 //   } else {
 //     return false;
 //   }
+// });
+// console.log(resultat);
+
+/* Prendre 1 élément sur 2 */
+// resultat = tableau.filter(function (valeur, index) {
+  // return index % 2 === 0; // permet d'écrire plus court, car ça implique un true
+  //
+  //   if (index % 2 === 0) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
 // });
 // console.log(resultat);
 
@@ -57,13 +59,13 @@ console.log(resultat);
 // console.log(resultat);
 
 /* Filtrer les cadeaux trop chers */
-// let cadeaux = [
-//   { nom: "jouet1", prix: 23 },
-//   { nom: "jouet2", prix: 15 },
-//   { nom: "jouet3", prix: 50 },
-// ];
+let cadeaux = [
+  { nom: "jouet1", prix: 23 },
+  { nom: "jouet2", prix: 15 },
+  { nom: "jouet3", prix: 50 },
+];
 
-// let cadeauxTropChers = cadeaux.filter(function(valeur) {
-//   return valeur.prix >= 45;
-// });
-// console.log(cadeauxTropChers);
+let cadeauxTropChers = cadeaux.filter(function(valeur) {
+  return valeur.prix >= 45;
+});
+console.log(cadeauxTropChers);
