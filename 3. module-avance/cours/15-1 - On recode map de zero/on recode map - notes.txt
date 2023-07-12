@@ -1,0 +1,7 @@
+Dans l'exemple, on a mis 3 arguments de callback
+resultat.push(callback(this.donnees[i], i, this.donnees));
+
+
+Étant donné que ma fonction de callback n'en possède qu'un
+function longueurChaine(chaine) 
+    les 2 suivants seront ignorés
