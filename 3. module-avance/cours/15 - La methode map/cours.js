@@ -26,35 +26,37 @@ let resultat = tableau.map(longueurChaine);
 console.log(resultat);
 
 /* Un NOUVEAU tableau est créé ! */
-// console.log(tableau, resultat);
+console.log(tableau, resultat);
 
 /* Avec une fonction anonyme */
 // Extraire les N (= index) premiers caractères d'une chaîne
-// resultat = tableau.map(function(chaine, index) {
-//   return chaine.slice(0, index);
-// });
-// console.log(resultat);
+resultat = tableau.map(function(chaine, index) {
+  return chaine.slice(0, index);
+});
+console.log(resultat);
 
 /* Extraire les noms de domaines en majuscules d'adresses emails */
-// let emails = [
-//   "tom.redocemia@gmail.com",
-//   "oncle.bob@protonmail.com",
-//   "jean.claude@dusse.com",
-// ];
+let emails = [
+  "tom.redocemia@gmail.com",
+  "oncle.bob@protonmail.com",
+  "jean.claude@dusse.com",
+];
 
-// let domaines = emails.map(function(email) {
-//   let nomDomaine = email.split('@')[1];
-//   return nomDomaine.toUpperCase();
-// });
-// console.log(domaines);
+let domaines = emails.map(function(email) {
+  let nomDomaine = email.split('@')[1];
+  return nomDomaine.toUpperCase();
+});
+console.log(domaines);
 
 /* Somme des valeurs adjacentes valeur[i] += valeur[i + 1] */
-// let nombres = [1, 2, 3, 4, 5];
-// resultat = nombres.map(function(nombre, index, tab) {
-//   let somme = nombre;
-//   if (index < tab.length - 1) {
-//     somme += tab[index + 1];
-//   }
-//   return somme;
-// });
-// console.log(resultat);
+let nombres = [1, 2, 3, 4, 5];
+
+resultat = nombres.map(function(nombre, index, tab) {
+  let somme = nombre;
+  if (index < tab.length - 1) {
+    somme += tab[index + 1];
+  }
+  return somme;
+});
+
+console.log(resultat);

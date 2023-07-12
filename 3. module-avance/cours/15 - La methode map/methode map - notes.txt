@@ -1,0 +1,23 @@
+.map()
+
+Crée un nouveau tableau
+    avec les résultats de l'appel d'une fonction
+        fournie sur chaque élément du tableau appelant.
+
+
+Contrairement à .filter()
+    .map() à toujours le même nombre d'éléments 
+        dans son tableau de résultats 
+
+Prend une fonction callback (anonyme possible)
+Fonction de callback : function (valeur, index, tableau)
+
+
+
+  tableau ===> transformation via map()      ===>   resultat
+                                                   
+  "zero", ===> callback("zero", 0, tableau)  ===>  4,
+  "un",   ===> callback("un", 1, tableau)    ===>  2,
+  "deux", ===> callback("deux", 2, tableau)  ===>  4,
+  "trois" ===> callback("trois", 3, tableau) ===>  5,
+                                                
