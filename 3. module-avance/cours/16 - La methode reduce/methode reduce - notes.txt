@@ -1,0 +1,43 @@
+reduce
+
+Applique une fonction qui est un « accumulateur »
+    et qui traite chaque valeur d'une liste (de la gauche vers la droite)
+        afin de la réduire à une seule valeur.
+
+
+le callback debute avec une valeur initiale lors de l'appel
+    .reduce (callback, valeurInitiale)
+
+
+Une sorte de PacMan qui vient manger un à un chaque element du tableau,
+    du premier au dernier
+
+
+Le tableau de base ne change pas
+
+
+  "zero", ===> callback(valeurInitiale, "zero", 0, tableau)  ===>  res0,
+  "un",   ===> callback(res0, "un", 1, tableau)              ===>  res1,
+  "deux", ===> callback(res1, "deux", 2, tableau)            ===>  res2,
+  "trois" ===> callback(res2, "trois", 3, tableau)           ===>  resultat,
+
+
+
+Soit en fonction callback, anonyme ou non, on mets 2 arguments minimum (4max)
+Le 1er paramètre est l'accumulateur, et le 2ème la currentValue
+Le 3ème le currentIndex, et le 4ème le tableau sur lequel on a call .reduce()
+
+```function abc (accumulateur, currentValue)```
+
+La valeur du 1er accumulateur vient du 2eme paramètres de .reduce
+```.reduce(abc, valeurInitiale)```
+
+
+Avec une fonction anonyme, on met la valeur initiale à la fin de l'appel de function''
+
+resultat = tableau.reduce(function(resultatIntermediaire, valeur, index) {
+  let chaineFinale = resultatIntermediaire + valeur + index;
+  return chaineFinale;
+}, ""); // <-- valeur initiale
+
+

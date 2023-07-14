@@ -19,16 +19,24 @@ let nombres = [1, 2, 3, 4];
 */
 
 /* reduce() avec valeur initiale */
+
+//---------------------------------------
 // Concaténation de chaînes de caractères
-function concatenation(resultat, chaine) {
-  let chaineFinale = resultat + chaine;
-  return chaineFinale;
-}
+//---------------------------------------
 
-let resultat = tableau.reduce(concatenation, "");
-console.log(resultat);
+// le premier paramètre est l'accumulateur, et ensuite la currentValue
+// function concatenation(resultat, chaine) {
+//   let chaineFinale = resultat + chaine;
+//   return chaineFinale;
+// }
 
+// let resultat = tableau.reduce(concatenation, "");
+// console.log(resultat);
+
+//---------------------------------------
 /* Somme des éléments d'un tableau */
+//---------------------------------------
+
 // function somme(resultat, nombre) {
 //   let somme = resultat + nombre;
 //   return somme;
@@ -37,22 +45,28 @@ console.log(resultat);
 // resultat = nombres.reduce(somme, 0);
 // console.log(resultat);
 
+//---------------------------------------
 /* Création d'un objet */
-// function ajouterPropriete(resultatIntermediaire, valeur) {
-//   resultatIntermediaire[valeur] = valeur;
-//   return resultatIntermediaire;
-// }
+//---------------------------------------
 
-// resultat = tableau.reduce(ajouterPropriete, {});
-// console.log(resultat);
+function ajouterPropriete(resultatIntermediaire, valeur, index) {
+  resultatIntermediaire[valeur] = index;
+  return resultatIntermediaire;
+}
 
+resultat = tableau.reduce(ajouterPropriete, {});
+console.log(resultat);
+
+//---------------------------------------
 /* Avec une fonction anonyme */
-// resultat = tableau.reduce(function(resultatIntermediaire, valeur, index) {
-//   let chaineFinale = resultatIntermediaire + valeur + index;
-//   return chaineFinale;
-// }, ""); // <-- valeur initiale
+//---------------------------------------
 
-// console.log(resultat);
+resultat = tableau.reduce(function (resultatIntermediaire, valeur, index) {
+  let chaineFinale = resultatIntermediaire + valeur + "0" + index;
+  return chaineFinale;
+}, ""); // <-- valeur initiale
+
+console.log(resultat);
 
 /* reduce() SANS valeur initiale (conseil : utilisez toujours une valeur initiale) */
 /* Somme des éléments d'un tableau */

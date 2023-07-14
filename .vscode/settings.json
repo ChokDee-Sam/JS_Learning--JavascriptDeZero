@@ -1,0 +1,19 @@
+{
+    "editor.tokenColorCustomizations": {
+        "[Monokai Pro (Filter Octagon)]": {
+            "textMateRules": [
+                {
+                    "name": "JAX tags",
+                    "scope": [
+                        "entity.name.tag.js.jsx support.class.component.js.jsx"
+                    ],
+                    "settings": {
+                        "foreground": "#3fe265"
+                    }
+                }
+            ]
+        },
+        "comments": "",
+        "textMateRules": []
+    }
+}
