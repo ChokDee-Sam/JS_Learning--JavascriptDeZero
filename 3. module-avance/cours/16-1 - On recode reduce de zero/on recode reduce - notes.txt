@@ -1,0 +1,10 @@
+Notes perso : 
+Je comprends bien mieux avec 'accumulator / currentValue'
+    plutot qu'avec des noms changeants qui me font galérer (resultat, chaine, nombre, somme, etc etc)
+
+Attention, dans le cas où on ne défini pas de valeur initiale, il faut écrire une condition
+
+if (valeurInitiale === undefined) {
+    resultat = this.donnes[0]           //  pour donner une valeur initiale du premier element du tableau à l'accumulateur
+    debutIndex = 1                      //  pour     let index = debutIndex      dans la boucle for
+}
