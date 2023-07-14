@@ -1,7 +1,7 @@
 /* La méthode reduce() */
 
 let tableau = ["zero", "un", "deux", "trois"];
-let nombres = [1, 2, 3, 4];
+let nombres = [2, 3, 4];
 
 /* Une fonction de combinaison introduite depuis ES5 ! */
 // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
@@ -70,35 +70,35 @@ resultat = tableau.reduce(function (resultatIntermediaire, valeur, index) {
 
 /* reduce() SANS valeur initiale (conseil : utilisez toujours une valeur initiale) */
 /* Somme des éléments d'un tableau */
-function somme(resultat, nombre) {
-  let somme = resultat + nombre;
-  return somme;
-}
+// function somme(resultat, nombre) {
+//   let somme = resultat + nombre;
+//   return somme;
+// }
 
-resultat = nombres.reduce(somme);
-console.log(resultat);
+// resultat = nombres.reduce(somme);
+// console.log(resultat);
 
 /* Multiplication des éléments d'un tableau */
-function multiplication(resultat, nombre) {
-  let multiplication = resultat * nombre;
-  return multiplication;
-}
+// function multiplication(resultat, nombre) {
+//   let multiplication = resultat * nombre;
+//   return multiplication;
+// }
 
-resultat = nombres.reduce(multiplication);
-console.log(resultat);
+// resultat = nombres.reduce(multiplication);
+// console.log(resultat);
 
 /* reduceRight() */
 // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight
 
-// resultat = nombres.reduceRight(function(resultat, valeur) {
-//   let puissance = valeur ** resultat;
-//   return puissance;
-// });
-// console.log(resultat);
+resultat = nombres.reduceRight(function(resultat, valeur) {
+  let puissance = valeur ** resultat;
+  return puissance;
+});
+console.log(resultat);
 
 /* reduceRight() === Array.reverse().reduce() ! */
-// resultat = nombres.reverse().reduce(function(resultat, valeur) {
-//   let puissance = valeur ** resultat;
-//   return puissance;
-// });
-// console.log(resultat);
+resultat = nombres.reverse().reduce(function(resultat, valeur) {
+  let puissance = valeur ** resultat;
+  return puissance;
+});
+console.log(resultat);

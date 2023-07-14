@@ -46,3 +46,16 @@ Sans affecter de valeur initiale, par defaut :
     on debute la fonction callback dès le second element du tableau
 
 Pour éviter les problèmes, on recommande de toujours mettre une valeur initiale
+
+
+---------------------
+reduceRight
+---------------------
+
+Applique une fonction sur un accumulateur et chaque valeur d'un tableau (de la droite vers la gauche) de sorte à réduire le tableau en une seule valeur.
+
+En gros : comme reduce, mais en appliquant le callback sur les éléments de tableau de droite vers la gauche
+
+Utilité : lorsqu'on ne pourra pas faire certaines opérations dans le sens 'classique' (de gauche vers la droite)
+
+Tip : reduceRight === Array.reverse().reduce()
