@@ -26,7 +26,7 @@ Le tableau de base ne change pas
 Soit en fonction callback, anonyme ou non, on mets 2 arguments minimum (4max)
 Le 1er paramètre est l'accumulateur, et le 2ème la currentValue
 Le 3ème le currentIndex, et le 4ème le tableau sur lequel on a call .reduce()
-
+ 
 ```function abc (accumulateur, currentValue)```
 
 La valeur du 1er accumulateur vient du 2eme paramètres de .reduce
@@ -41,3 +41,8 @@ resultat = tableau.reduce(function(resultatIntermediaire, valeur, index) {
 }, ""); // <-- valeur initiale
 
 
+Sans affecter de valeur initiale, par defaut :
+  la valeur initiale sera la première valeur du tableau
+    on debute la fonction callback dès le second element du tableau
+
+Pour éviter les problèmes, on recommande de toujours mettre une valeur initiale

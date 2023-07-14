@@ -55,7 +55,7 @@ function ajouterPropriete(resultatIntermediaire, valeur, index) {
 }
 
 resultat = tableau.reduce(ajouterPropriete, {});
-console.log(resultat);
+// console.log(resultat);
 
 //---------------------------------------
 /* Avec une fonction anonyme */
@@ -66,26 +66,26 @@ resultat = tableau.reduce(function (resultatIntermediaire, valeur, index) {
   return chaineFinale;
 }, ""); // <-- valeur initiale
 
-console.log(resultat);
+// console.log(resultat);
 
 /* reduce() SANS valeur initiale (conseil : utilisez toujours une valeur initiale) */
 /* Somme des éléments d'un tableau */
-// function somme(resultat, nombre) {
-//   let somme = resultat + nombre;
-//   return somme;
-// }
+function somme(resultat, nombre) {
+  let somme = resultat + nombre;
+  return somme;
+}
 
-// resultat = nombres.reduce(somme);
-// console.log(resultat);
+resultat = nombres.reduce(somme);
+console.log(resultat);
 
 /* Multiplication des éléments d'un tableau */
-// function multiplication(resultat, nombre) {
-//   let multiplication = resultat * nombre;
-//   return multiplication;
-// }
+function multiplication(resultat, nombre) {
+  let multiplication = resultat * nombre;
+  return multiplication;
+}
 
-// resultat = nombres.reduce(multiplication);
-// console.log(resultat);
+resultat = nombres.reduce(multiplication);
+console.log(resultat);
 
 /* reduceRight() */
 // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight
